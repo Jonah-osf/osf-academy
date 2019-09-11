@@ -1,0 +1,38 @@
+$primary: rgba(255,255,255);
+$secondary: #46413e;
+html,body{
+	width: 100%;
+	margin: 0; padding: 0;
+	overflow: hidden;
+}
+.services{
+	margin: 0; padding: 0;
+	display: flex;
+	flex-direction: column;
+	width: 50vh; height: 95vh;
+	background: $secondary;
+	color: white;
+	section{
+		display: flex;
+		height: 33.33%;
+		width: 100%;
+		div, figure{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin: 0; padding: 0;
+			height: 100%;
+			width: 50%;
+		}
+		div{
+			align-items: left;
+			h1, p{
+				padding-left: 5%;
+				width: 95%;
+			}
+		}
+		figure{
+			align-items: center;
+		}
+	}
+}
