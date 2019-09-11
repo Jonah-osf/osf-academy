@@ -1,0 +1,28 @@
+@import "global.scss";
+.popular-items{
+	@include spacing-reset;
+	height: 75%;
+	background: $secondary;
+}
+.items-container{
+	width: 95%;
+	margin: 0 auto;
+	display: flex;
+	padding: 1.8vh 0;
+	font-size: 1.8vh;
+	color: $primary;
+}
+.items-container::before, 
+.items-container::after{
+	color:white;
+	content:'';
+	flex:1;
+	border-bottom: solid 0.1vh;
+	box-shadow: 0 -1px ;
+}
+.items-container::before{
+	margin: auto 5% auto 0;
+}
+.items-container::after{
+	margin: auto 0 auto 5%;
+}

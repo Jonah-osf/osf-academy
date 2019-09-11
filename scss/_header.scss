@@ -1,0 +1,15 @@
+@import "global.scss";
+header{
+	z-index: 999;
+	height: 8%; width: 100%;
+	position: sticky;
+	top: 0; left: 0;
+	@include centered-flex;
+	background: $primary;
+	border-bottom: solid 2px $border-color;
+	img{
+		height: 90%;
+		display: block;
+		margin: 0px auto;
+	}
+}

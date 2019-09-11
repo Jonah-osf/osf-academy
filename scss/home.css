@@ -1,0 +1,356 @@
+/*Partials*/
+/*Global SCSS*/
+/*Global Styles*/
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+/*Partials*/
+/*Global SCSS*/
+/*Global Styles*/
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+header {
+  z-index: 999;
+  height: 8%;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-bottom: solid 2px #f4f1eb;
+}
+header img {
+  height: 90%;
+  display: block;
+  margin: 0px auto;
+}
+
+/*Partials*/
+/*Global SCSS*/
+/*Global Styles*/
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+nav {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100vh;
+  background: #262a33;
+  font-family: "Lato", sans-serif;
+}
+nav ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+nav ul li {
+  display: block;
+  margin: 0;
+  padding: 1em 0;
+  font-size: 2vh;
+  font-weight: 500;
+  text-transform: uppercase;
+  list-style-type: none;
+  color: white;
+}
+nav ul li a:link, nav ul li a:visited, nav ul li a:hover, nav ul li a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*Partials*/
+/*Global SCSS*/
+/*Global Styles*/
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+.slider {
+  display: block;
+  margin: 3.5vh auto;
+  height: 60%;
+  width: 95%;
+}
+.slider input {
+  opacity: 0;
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 160%;
+  margin: 0;
+  padding: 0;
+  transition: left 0.01s 0.7s;
+  border-radius: 15px;
+  color: white;
+}
+
+.content {
+  position: absolute;
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0;
+  z-index: 3;
+  opacity: 0;
+  font-size: 1000px;
+  transition: opacity 0.2s 0.9s ease;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: lighter;
+  transition: opacity 0.2s 0.8s ease;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    max-width: 60vh;
+  }
+  .content h1 {
+    max-width: 100vh !important;
+  }
+}
+.slide-nav {
+  width: 100%;
+  height: 1rem;
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.dots {
+  display: inline-block;
+  z-index: 99;
+  height: 1.5vh;
+  width: 1.5vh;
+  top: -5px;
+  margin: 1vh;
+  position: relative;
+  border: solid -0.4vh 255, 255, 255, 0.3;
+  border-radius: 50%;
+  transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in;
+  -moz-transition: all 0.35s ease-in;
+  -webkit-transition: all 0.35s ease-in;
+  -o-transition: all 0.35s ease-in;
+  -ms-transition: all 0.35s ease-in;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dots:hover {
+  border: solid 0.4vh white;
+}
+
+#event1:checked ~ .slide-nav #dot1,
+#event2:checked ~ .slide-nav #dot2,
+#event3:checked ~ .slide-nav #dot3 {
+  border: solid 0.4vh white;
+  background: rgba(255, 255, 255, 0);
+}
+
+.bg1 {
+  background: url("../files/1st.png") top right no-repeat #262a33;
+  background-size: cover;
+}
+
+.bg2 {
+  background: url("../files/2nd.png") 70% no-repeat;
+  background-size: cover;
+}
+
+.bg3 {
+  background: url("../files/3rd.png") center no-repeat;
+  background-size: cover;
+}
+
+#event1:checked + #first,
+#event2:checked + #second,
+#event3:checked + #third {
+  transition: left 0.7s ease-in;
+  -moz-transition: left 0.7s ease-in;
+  -webkit-transition: left 0.7s ease-in;
+  -o-transition: left 0.7s ease-in;
+  -ms-transition: left 0.7s ease-in;
+  z-index: 2;
+  left: 0;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 30vh;
+  width: 100%;
+  background: no-repeat url(../files/banner-img.jpg) 50% 30%;
+  background-size: cover;
+  font-size: 2.5vh;
+}
+.banner h {
+  font-weight: 900;
+}
+.banner p {
+  font-size: 1.8vh;
+  font-weight: lighter;
+}
+.banner p, .banner h1 {
+  margin: 0 0 4vh 0;
+  width: 80%;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+@media screen and (min-width: 768px) {
+  .banner p, .banner h1 {
+    max-width: 50vh;
+  }
+}
+
+/*Partials*/
+/*Global SCSS*/
+/*Global Styles*/
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+.popular-items {
+  margin: 0;
+  padding: 0;
+  height: 75%;
+  background: #262a33;
+}
+
+.items-container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  padding: 1.8vh 0;
+  font-size: 1.8vh;
+  color: white;
+}
+
+.items-container::before,
+.items-container::after {
+  color: white;
+  content: "";
+  flex: 1;
+  border-bottom: solid 0.1vh;
+  box-shadow: 0 -1px;
+}
+
+.items-container::before {
+  margin: auto 5% auto 0;
+}
+
+.items-container::after {
+  margin: auto 0 auto 5%;
+}
+
+/*# sourceMappingURL=home.css.map */

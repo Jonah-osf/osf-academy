@@ -1,0 +1,30 @@
+.banner{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	margin: 0; padding: 0;
+	height: 30vh; width: 100%;
+	background: no-repeat url(../files/banner-img.jpg) 50% 30%;
+	background-size: cover;
+	font-size: 2.5vh;
+	h{
+		font-weight: 900;
+	}
+	p{
+		font-size: 1.8vh;
+		font-weight: lighter;
+	}
+	p, h1{
+		margin: 0 0 4vh 0;
+		width: 80%;
+		color: $primary;
+		text-shadow: 2px 2px 2px black;
+	}
+	@media screen and (min-width: 768px){
+	p, h1{
+		max-width: 50vh;
+	}
+}
+}

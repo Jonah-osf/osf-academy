@@ -1,0 +1,52 @@
+
+//////////////////////////////////////////
+/*Partials*/
+//////////////////////////////////////////
+
+//////////////////////////////////////////
+/*Global SCSS*/
+//////////////////////////////////////////
+$main-font: 'Lato', sans-serif;
+$primary: rgba(255,255,255, 1);
+$secondary: #262a33;
+$border-color: #f4f1eb;
+
+@mixin full-dimensions{
+	height: 100%; width: 100%;
+}
+@mixin anchor-reset{
+	a:link, a:visited, a:hover, a:active{
+		color: inherit;
+		text-decoration: none;
+	} 
+}
+@mixin spacing-reset{
+	margin: 0;
+	padding: 0;
+}
+@mixin centered-flex{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/////////////////////////////////////////////
+/*Global Styles*/
+////////////////////////////////////////////
+html, body{
+	@include full-dimensions;
+	@include spacing-reset;
+	position: relative;	
+	font-size: 16px;
+	font-family: $main-font;
+}
+@media screen and (min-width: 768px){
+	html{
+		font-size: 18px;
+	}
+}
+@media screen and (min-width: 1200px){
+	html{
+		font-size: 20px;
+	}
+}
