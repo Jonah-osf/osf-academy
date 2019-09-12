@@ -51,7 +51,7 @@ $p-timing: opacity 0.2s 0.9s ease;
 	position: relative;
 	height: 100%; width: 100%;
 	border-radius: 15px;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 //Slide & Content
@@ -69,7 +69,7 @@ $p-timing: opacity 0.2s 0.9s ease;
 }
 .content{
 	font-size: 2.5vh;
-	margin: 0; padding: 1em 0 0 0;
+	margin: 0; padding: 1em 0 0 5%;
 	z-index: 3;
 }
 .content_h{
@@ -119,11 +119,11 @@ $p-timing: opacity 0.2s 0.9s ease;
 ///Slider Images///
 
 .bg1{
-	background: url($slider1) top right no-repeat $secondary;
+	background: url($slider1) 100% 25% no-repeat $secondary;
 	background-size: cover;
 }
 .bg2{
-	background: url($slider2) 70% no-repeat;
+	background: url($slider2) 65% no-repeat;
 	background-size: cover;
 }
 .bg3{

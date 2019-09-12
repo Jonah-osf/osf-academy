@@ -1,8 +1,8 @@
 @import "global.scss";
 header{
 	z-index: 999;
-	height: 8%; width: 100%;
-	position: sticky;
+	height: 12%; width: 100%;
+	position: fixed;
 	top: 0; left: 0;
 	@include centered-flex;
 	background: $primary;

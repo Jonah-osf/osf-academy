@@ -1,14 +1,11 @@
 
 //////////////////////////////////////////
-/*Partials*/
-//////////////////////////////////////////
-
-//////////////////////////////////////////
 /*Global SCSS*/
 //////////////////////////////////////////
 $main-font: 'Lato', sans-serif;
 $primary: rgba(255,255,255, 1);
 $secondary: #262a33;
+$tertiary: rgba(70,65,62,1);
 $border-color: #f4f1eb;
 
 @mixin full-dimensions{
@@ -40,6 +37,7 @@ html, body{
 	font-size: 16px;
 	font-family: $main-font;
 }
+
 @media screen and (min-width: 768px){
 	html{
 		font-size: 18px;

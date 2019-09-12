@@ -1,4 +1,3 @@
-/*Partials*/
 /*Global SCSS*/
 /*Global Styles*/
 html, body {
@@ -21,7 +20,6 @@ html, body {
     font-size: 20px;
   }
 }
-/*Partials*/
 /*Global SCSS*/
 /*Global Styles*/
 html, body {
@@ -46,9 +44,9 @@ html, body {
 }
 header {
   z-index: 999;
-  height: 8%;
+  height: 12%;
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -63,7 +61,6 @@ header img {
   margin: 0px auto;
 }
 
-/*Partials*/
 /*Global SCSS*/
 /*Global Styles*/
 html, body {
@@ -96,7 +93,7 @@ nav {
 }
 nav ul {
   margin: 0;
-  padding-left: 1.5rem;
+  padding: 0 0 0 1.5rem;
 }
 nav ul li {
   display: block;
@@ -113,7 +110,6 @@ nav ul li a:link, nav ul li a:visited, nav ul li a:hover, nav ul li a:active {
   text-decoration: none;
 }
 
-/*Partials*/
 /*Global SCSS*/
 /*Global Styles*/
 html, body {
@@ -152,7 +148,7 @@ html, body {
   height: 100%;
   width: 100%;
   border-radius: 15px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .slide {
@@ -172,14 +168,14 @@ html, body {
 .content {
   font-size: 2.5vh;
   margin: 0;
-  padding: 1em 0 0 1em;
+  padding: 1em 0 0 5%;
   z-index: 3;
 }
 
 .content_h {
   font-size: 5vh;
   margin: 0;
-  padding: 2em 0 0 1em;
+  padding: 2em 0 0 5%;
   transition: opacity 0.2s 0.8s ease;
 }
 
@@ -230,12 +226,12 @@ html, body {
 }
 
 .bg1 {
-  background: url("../files/1st.png") top right no-repeat #262a33;
+  background: url("../files/1st.png") 100% 25% no-repeat #262a33;
   background-size: cover;
 }
 
 .bg2 {
-  background: url("../files/2nd.png") 70% no-repeat;
+  background: url("../files/2nd.png") 65% no-repeat;
   background-size: cover;
 }
 
@@ -264,22 +260,23 @@ html, body {
   text-align: center;
   margin: 0;
   padding: 0;
-  height: 30vh;
+  height: 50%;
   width: 100%;
   background: no-repeat url(../files/banner-img.jpg) 50% 30%;
   background-size: cover;
-  font-size: 2.5vh;
 }
-.banner h {
-  font-weight: 900;
+.banner h1 {
+  width: 100%;
+  height: 33.33%;
+  font-size: 5vh;
+  margin: auto 0 0 0;
 }
 .banner p {
-  font-size: 1.8vh;
-  font-weight: lighter;
+  width: 95%;
+  font-size: 2vh;
+  margin: -1em auto auto auto;
 }
 .banner p, .banner h1 {
-  margin: 0 0 4vh 0;
-  width: 80%;
   color: white;
   text-shadow: 2px 2px 2px black;
 }
@@ -289,7 +286,6 @@ html, body {
   }
 }
 
-/*Partials*/
 /*Global SCSS*/
 /*Global Styles*/
 html, body {
@@ -343,6 +339,85 @@ html, body {
 
 .items-container::after {
   margin: auto 0 auto 5%;
+}
+
+/*Global SCSS*/
+/*Global Styles*/
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+.services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: #46413e;
+  color: white;
+}
+.services section {
+  display: flex;
+  padding: 10% 5%;
+  height: calc(33.33% - 5%);
+  width: 80%;
+  margin: 0 auto;
+}
+.services section div, .services section figure {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 50%;
+}
+.services section div {
+  align-items: left;
+}
+.services section div h1 {
+  height: 20%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 2.5vh;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.services section div p {
+  height: 80%;
+  width: 80%;
+  font-size: 1.5vh;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: auto;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.svg-container {
+  justify-content: center;
+  align-items: center;
+}
+
+.service-svg {
+  width: 50%;
+  height: 50%;
 }
 
 /*# sourceMappingURL=home.css.map */

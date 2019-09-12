@@ -4,21 +4,22 @@
 	align-items: center;
 	flex-direction: column;
 	text-align: center;
-	margin: 0; padding: 0;
-	height: 30vh; width: 100%;
+	@include spacing-reset;
+	height: 50%; width: 100%;
 	background: no-repeat url(../files/banner-img.jpg) 50% 30%;
 	background-size: cover;
-	font-size: 2.5vh;
-	h{
-		font-weight: 900;
+	h1{
+		width: 100%;
+		height: 33.33%;
+		font-size: 5vh;
+		margin: auto 0 0 0;
 	}
 	p{
-		font-size: 1.8vh;
-		font-weight: lighter;
+		width: 95%;
+		font-size: 2vh;
+		margin: -1em auto auto auto;
 	}
-	p, h1{
-		margin: 0 0 4vh 0;
-		width: 80%;
+	p, h1{;
 		color: $primary;
 		text-shadow: 2px 2px 2px black;
 	}
