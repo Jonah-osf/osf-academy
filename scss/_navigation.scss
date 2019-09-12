@@ -1,22 +1,26 @@
 @import "global.scss";
-nav {
-	margin: 0px; padding: 0px;
-	width: 100%; height: 100vh;
-	background: #262a33;
-	font-family: $main-font;
-	ul {
-		margin: 0;
-		padding: 0 0 0 1.5rem;
-		li{
-			display: block;
-			margin: 0;
-			padding: 1em 0;
-			font-size: 2vh;
-			font-weight: 500;
-			text-transform: uppercase;
-			list-style-type: none;
-			color: white;
-			@include anchor-reset;
-		}
+nav{
+	display: none;
+	width: 100%;
+	position: absolute;
+	text-align: left;
+	top: 100%; left: 0;
+	background: $secondary;
+	ul{
+		@include spacing-reset;
+		list-style: none;
+	}
+	li{
+		color: $primary;
+		padding: 1em 0 1em 1.5em;
+	}
+	@include anchor-reset;
+	a{
+		font-size: 2vh;
+		text-transform: uppercase;
 	}
 }
+#nav-toggle:checked + nav{
+	display: block;
+}
+
