@@ -1,0 +1,19 @@
+{
+  "name": "osf-academy",
+  "version": "1.0.0",
+  "description": "Internship project for OSF",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonah-osf/osf-academy.git"
+  },
+  "author": "Jonah-osf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jonah-osf/osf-academy/issues"
+  },
+  "homepage": "https://github.com/Jonah-osf/osf-academy#readme"
+}

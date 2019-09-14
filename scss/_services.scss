@@ -4,15 +4,15 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 80%;
 	width: 100vw;
 	background-color: $tertiary;
 	color: $primary;
 	section{
 		display: flex;
-		padding: 5%;
+		padding: 5vh 0;
 		height: 33%;
-		width: 80%;
+		width: 90%;
 		margin: 0 auto;
 		div, figure{
 			display: flex;
@@ -46,10 +46,9 @@
 }
 .svg-container{
 	display: flex;
-	justify-content: center;
 }
 .service-svg{
-	flex-grow: 1;
 	width: 12vh;
 	height: 12vh;
+	margin-bottom: auto;
 }

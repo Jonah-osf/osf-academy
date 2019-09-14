@@ -8,16 +8,28 @@ header{
 	font-size: 2vh;
 	background: $primary;
 	border-bottom: solid 2px $border-color;
-	.logo{
+	figure{
+		display: inline-block;
+		height: 100%; width: 3em;
 		@include spacing-reset;
-		display: inline-block;
 	}
-	img{
-		height: 66.66%;
-		display: inline-block;
-		margin: 0px auto;
+	figure > img{
+		position: relative;
+        top: 0;
+		height: 100%;
 	}
 }
-input[for="nav-toggle"]:checked ~ nav{
-	display: block;
+.heading{
+    display: none;
+    @include spacing-reset;
+}
+@media screen and (min-width:768px){
+    .heading{
+        display: inline-block;
+    }
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

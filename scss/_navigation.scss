@@ -1,26 +1,92 @@
 @import "global.scss";
+$nav-open-s: 400ms ease-in;
+$anchor-open-s: 5s ease-in-out;
+$anchor-close-s: 200ms ease-in-out;
+@mixin burger-open{
+    transition: $nav-open-s;
+	-moz-transition: $nav-open-s;
+    -webkit-transition: $nav-open-s;
+    -o-transition: $nav-open-s;
+    -ms-transition: $nav-open-s;
+}
+@mixin anchor-open{
+    -moz-transition: $anchor-open-s;
+    -webkit-transition: $anchor-open-s;
+    -o-transition: $anchor-open-s;
+    -ms-transition: $anchor-open-s;
+}
+@mixin anchor-close{
+    -moz-transition: $anchor-close-s;
+    -webkit-transition: $anchor-close-s;
+    -o-transition: $anchor-close-s;
+    -ms-transition: $anchor-close-s;
+}
 nav{
-	display: none;
 	width: 100%;
 	position: absolute;
 	text-align: left;
 	top: 100%; left: 0;
-	background: $secondary;
+    transform: scale(1, 0);
+    transform-origin: top;
+    @include burger-open;
 	ul{
 		@include spacing-reset;
 		list-style: none;
 	}
 	li{
 		color: $primary;
-		padding: 1em 0 1em 1.5em;
+		padding: 1em 0 1em 1em;
 	}
 	@include anchor-reset;
 	a{
 		font-size: 2vh;
 		text-transform: uppercase;
+        opacity: 0;
+        transition: opacity $anchor-open-s ease-in-out;
 	}
 }
-#nav-toggle:checked + nav{
-	display: block;
+#nav-toggle{
+    display: none;
 }
-
+.nav-toggle-label{
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 1em;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	span::before, span::after, span{
+		position: relative;
+		display: block;
+		height: 2px;
+		width: 2em;
+		border-radius: 2px;
+		background: $secondary;
+		content: '';
+	}
+	span::before, span::after{
+	position: absolute;	
+	}
+	span::before{
+		top: 0.66em;
+	}
+	span::after{
+		bottom: 0.66em;
+	}
+}
+#nav-toggle:checked ~ nav{
+    @include burger-open;
+    transform: scale(1,1);
+    background: $secondary;
+    a{
+        opacity: 1;
+        transition: opacity 250ms 250ms ease-in-out;
+    }
+}
+@media screen and (min-width: 768px){
+    .nav-toggle-label{
+        display: none;
+    }
+}

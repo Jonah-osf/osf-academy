@@ -54,21 +54,36 @@ header {
   background: white;
   border-bottom: solid 2px #f4f1eb;
 }
-header .logo {
+header figure {
+  display: inline-block;
+  height: 100%;
+  width: 3em;
   margin: 0;
   padding: 0;
-  display: inline-block;
 }
-header img {
-  height: 66.66%;
-  display: inline-block;
-  margin: 0px auto;
-}
-
-input[for=nav-toggle]:checked ~ nav {
-  display: block;
+header figure > img {
+  position: relative;
+  top: 0;
+  height: 100%;
 }
 
+.heading {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .heading {
+    display: inline-block;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 /*Global SCSS*/
 /*Global Styles*/
 html, body {
@@ -92,13 +107,18 @@ html, body {
   }
 }
 nav {
-  display: none;
   width: 100%;
   position: absolute;
   text-align: left;
   top: 100%;
   left: 0;
-  background: #262a33;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: 400ms ease-in;
+  -moz-transition: 400ms ease-in;
+  -webkit-transition: 400ms ease-in;
+  -o-transition: 400ms ease-in;
+  -ms-transition: 400ms ease-in;
 }
 nav ul {
   margin: 0;
@@ -107,7 +127,7 @@ nav ul {
 }
 nav li {
   color: white;
-  padding: 1em 0 1em 1.5em;
+  padding: 1em 0 1em 1em;
 }
 nav a:link, nav a:visited, nav a:hover, nav a:active {
   color: inherit;
@@ -116,12 +136,62 @@ nav a:link, nav a:visited, nav a:hover, nav a:active {
 nav a {
   font-size: 2vh;
   text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 5s ease-in-out ease-in-out;
 }
 
-#nav-toggle:checked + nav {
+#nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-toggle-label span::before, .nav-toggle-label span::after, .nav-toggle-label span {
+  position: relative;
   display: block;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  background: #262a33;
+  content: "";
+}
+.nav-toggle-label span::before, .nav-toggle-label span::after {
+  position: absolute;
+}
+.nav-toggle-label span::before {
+  top: 0.66em;
+}
+.nav-toggle-label span::after {
+  bottom: 0.66em;
 }
 
+#nav-toggle:checked ~ nav {
+  transition: 400ms ease-in;
+  -moz-transition: 400ms ease-in;
+  -webkit-transition: 400ms ease-in;
+  -o-transition: 400ms ease-in;
+  -ms-transition: 400ms ease-in;
+  transform: scale(1, 1);
+  background: #262a33;
+}
+#nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms 250ms ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-toggle-label {
+    display: none;
+  }
+}
 /*Global SCSS*/
 /*Global Styles*/
 html, body {
@@ -146,8 +216,8 @@ html, body {
 }
 .slider {
   display: block;
-  margin: 3.5vh auto;
-  height: 60%;
+  margin: 0 auto 0 auto;
+  height: 80vh;
   width: 95%;
 }
 .slider input {
@@ -155,9 +225,9 @@ html, body {
 }
 
 .container {
-  margin: 12% auto;
+  margin: auto auto;
   position: relative;
-  height: 100%;
+  height: 95%;
   width: 100%;
   border-radius: 15px;
   overflow-x: hidden;
@@ -274,7 +344,7 @@ html, body {
   padding: 0;
   height: 33.33%;
   width: 100%;
-  background: no-repeat url(../files/banner-img.jpg) 50% 30%;
+  background: no-repeat url(../files/banner-osf.svg);
   background-size: cover;
 }
 .banner h1 {
@@ -380,16 +450,16 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80%;
   width: 100vw;
   background-color: #46413e;
   color: white;
 }
 .services section {
   display: flex;
-  padding: 5%;
+  padding: 5vh 0;
   height: 33%;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 .services section div, .services section figure {
@@ -423,13 +493,12 @@ html, body {
 
 .svg-container {
   display: flex;
-  justify-content: center;
 }
 
 .service-svg {
-  flex-grow: 1;
   width: 12vh;
   height: 12vh;
+  margin-bottom: auto;
 }
 
 /*# sourceMappingURL=home.css.map */
