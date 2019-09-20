@@ -3,6 +3,8 @@
 /*Global SCSS*/
 //////////////////////////////////////////
 $main-font: 'Lato', sans-serif;
+$second-font: 'Quicksand', sans-serif;
+$third-font: 'Sniglet', cursive;
 $primary: rgba(255,255,255, 1);
 $secondary: #262a33;
 $tertiary: rgba(70,65,62,1);
@@ -33,11 +35,64 @@ $border-color: #f4f1eb;
 html, body{
 	@include full-dimensions;
 	@include spacing-reset;
+    overflow-x: hidden;
 	position: relative;	
 	font-size: 16px;
-	font-family: $main-font;
+	font-family: $third-font;
+    font-family: $second-font;
+    font-family: $main-font;
 }
 
+.preload{
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+li{
+    list-style-type: none;
+}
+ul{
+    @include spacing-reset;
+}
+a{
+    cursor: pointer;
+}
+//Dropdown menu
+.drop{
+    display: flex;
+    width: calc(100% - 30px);
+    list-style-type: none;
+    text-transform: uppercase;
+    img{
+        margin-left: auto;
+    }
+}
+.drop-first{
+    display: none;
+    text-transform: none;
+    font-weight: 300;
+}
+.drop-second{
+    display: none;
+    text-transform: none;
+    font-weight: 300;
+}
+.drop.open > img{
+    transform: rotate(180deg);
+}
+.drop.open ~ .drop-first{
+    display: block;
+}
+.drop.open ~ {
+    .drop-first.open + .drop-second{
+        display: block;
+        margin-left: 30px;
+        li{
+            margin: 7.5px 0;
+        }
+    }
+}
 @media screen and (min-width: 768px){
 	html{
 		font-size: 18px;

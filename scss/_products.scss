@@ -1,0 +1,26 @@
+.products{
+    height: 500px;
+    background: $secondary;
+}
+.products-box{
+    height: 365px;
+    width: 1000%;
+    @include spacing-reset;
+    display: flex;
+    figure{
+        height: 365px;
+        width: 290px;
+        display: inline-block;
+        img{
+            object-fit: cover;
+            @include spacing-reset;
+            display: block;
+        }
+        div{
+            height: 105px;
+            width: 100%;
+            @include spacing-reset;
+            background: $primary;
+        }
+    }
+}

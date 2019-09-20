@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 203 41" width="203" height="41">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { opacity: 0.102;fill: #1e1d22;stroke: #000000;paint-order:stroke fill markers;stroke-width: 4 } 
+	</style>
+	<g id="products">
+		<g id="2">
+			<path id="tile-2" class="shp0" d="M18.45 2.6L185.49 2.6C193.49 2.6 200.97 12.09 200.97 20.1C200.97 28.1 193.49 38.6 185.49 38.6L18.45 38.6C8.99 38.63 2.97 28.6 2.97 20.6C2.97 12.59 8.96 2.6 18.45 2.6Z" />
+		</g>
+	</g>
+</svg>

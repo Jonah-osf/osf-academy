@@ -1,6 +1,6 @@
-@import "global.scss";
 $nav-open-s: 400ms ease-in;
-$anchor-open-s: 5s ease-in-out;
+$x-s: cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+$anchor-open-s: .5s ease-in-out;
 $anchor-close-s: 200ms ease-in-out;
 @mixin burger-open{
     transition: $nav-open-s;
@@ -9,47 +9,77 @@ $anchor-close-s: 200ms ease-in-out;
     -o-transition: $nav-open-s;
     -ms-transition: $nav-open-s;
 }
+@mixin burger-x{
+    transition: all $x-s;
+    -moz-transition: all $x-s;
+    -webkit-transition: all $x-s;
+    -o-transition: all $x-s;
+    -ms-transition: all $x-s;
+}
 @mixin anchor-open{
+    transition: $anchor-open-s;
     -moz-transition: $anchor-open-s;
     -webkit-transition: $anchor-open-s;
     -o-transition: $anchor-open-s;
     -ms-transition: $anchor-open-s;
 }
 @mixin anchor-close{
+    transition: $anchor-open-s;
     -moz-transition: $anchor-close-s;
     -webkit-transition: $anchor-close-s;
     -o-transition: $anchor-close-s;
     -ms-transition: $anchor-close-s;
 }
-nav{
-	width: 100%;
-	position: absolute;
-	text-align: left;
+.top-nav{
+    width: 100%;
+    padding: 8px 0 0 15px;
 	top: 100%; left: 0;
+    position: absolute;
+    text-align: left;
     transform: scale(1, 0);
     transform-origin: top;
     @include burger-open;
-	ul{
-		@include spacing-reset;
-		list-style: none;
-	}
-	li{
-		color: $primary;
-		padding: 1em 0 1em 1em;
-	}
-	@include anchor-reset;
-	a{
-		font-size: 2vh;
-		text-transform: uppercase;
+    @include anchor-reset;
+    color: $primary;
+	img, a{
         opacity: 0;
         transition: opacity $anchor-open-s ease-in-out;
 	}
+    .drop{
+        margin-top: 14px;
+        font-size: 14px;
+    }
+    .drop.open ~ .drop-first{
+        display: flex !important;
+        width: 160px !important;
+        margin-top: 14px;
+        font-size: 16px !important;
+        img{
+            margin-left: auto;
+        }
+    }
+    .drop-first.open > img{
+        transform: rotate(180deg);
+    }
+    .drop-second{
+        font-size: 16px;
+    }
 }
-#nav-toggle{
+.nav-img{
+    opacity: 0;
+    width: calc(100% - 30px);
+    height: 280px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background: url(../files/nav-img.svg);
+}
+
+#nav-input{
     display: none;
 }
-.nav-toggle-label{
+.nav-toggle{
 	position: absolute;
+    cursor: pointer;
 	top: 0;
 	left: 0;
 	margin-left: 1em;
@@ -61,10 +91,11 @@ nav{
 		position: relative;
 		display: block;
 		height: 2px;
-		width: 2em;
+		width: 18px;
 		border-radius: 2px;
 		background: $secondary;
 		content: '';
+        @include burger-x;
 	}
 	span::before, span::after{
 	position: absolute;	
@@ -76,17 +107,33 @@ nav{
 		bottom: 0.66em;
 	}
 }
-#nav-toggle:checked ~ nav{
+#nav-input:checked ~ nav{
     @include burger-open;
     transform: scale(1,1);
     background: $secondary;
-    a{
+    img, a, figure{
         opacity: 1;
         transition: opacity 250ms 250ms ease-in-out;
     }
 }
-@media screen and (min-width: 768px){
-    .nav-toggle-label{
+#nav-input:checked + label{
+    span, span::before, span::after{
+        @include burger-x;
+    }
+    span::before{
+        transform: rotate(45deg);
+        top: 0;
+    }
+    span::after{
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+    span{
+        background: $primary;
+    }
+}
+@media screen and (min-width: 1028px){
+    .nav-toggle{
         display: none;
     }
 }
