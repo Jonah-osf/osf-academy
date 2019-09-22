@@ -1,7 +1,7 @@
-$dots-s: all 0.35s ease-in;
-$slider-s: left 0.7s ease-in;
-$h-timing: opacity 0.2s 0.8s ease;
-$p-timing: opacity 0.2s 0.9s ease;
+$dots-s: all 0.35s ease-out;
+$slider-s: left 1.2s ease-in-out;
+$h-timing: opacity 1s 0.9s ease-in-out;
+$p-timing: opacity 1s 1s ease-in-out;
 @mixin transition-dots{
 	transition: $dots-s;
 	-moz-transition: $dots-s;
@@ -40,7 +40,7 @@ $p-timing: opacity 0.2s 0.9s ease;
 .slider{
 	display: block;
 	margin: 79px auto 17px auto; 
-	height: 500px; width: 90%;
+	height: 510px; width: 90%;
 	input{
 		opacity: 0;
 	}
@@ -48,11 +48,30 @@ $p-timing: opacity 0.2s 0.9s ease;
 .slider-box{
 	margin: auto auto; 
 	position: relative;
-	height: 500px; width: 100%;
+	height: 510px; width: 100%;
 	border-radius: 5px;
 	overflow-x: hidden;
 }
+///Slider Events///
 
+#event1:checked + #first,
+#event2:checked + #second, 
+#event3:checked + #third{
+	@include left-checked;
+    .content-p, .content-h,
+    .content-p + button{
+        opacity: 1;
+    }
+    .content-h{
+        @include h-checked;
+    }
+    .content-p{
+        @include p-checked;
+    }
+    .content-p + button{
+        @include p-checked;
+    }
+}
 //Slide & Content
 
 .slide{
@@ -61,30 +80,94 @@ $p-timing: opacity 0.2s 0.9s ease;
 	z-index: -1;
 	top: 0;
 	left: 160%;
-	margin: 0; padding: 0;
-	transition: left 0.01s 0.7s;
+	@include spacing-reset;
+	transition: left 0.8s;
 	border-radius: 5px;
-	color: white;
+	color: $primary;
 }
-.content{
-	margin: 0; padding: 52px 0 0 5%;
-	z-index: 3;
+.content-p, .content-h,
+.content-p + button{
+    opacity: 0;
+    margin-left: 15px;
 }
-.content_h{
-	font-size: 5vh;
-	margin: 0; padding: 32px 0 0 5%;
-	transition: $h-timing;
+.content-p,
+.content-p + button{
+    font-size: 14px;
+    color: $primary;
+}
+.content-p + button{
+    height: 38px;
+    display: block;
+    margin: 60px auto 68px auto; 
+    padding: 12px 34px;
+    border: solid 1px $primary;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: 100;
+    line-height: 0px;
+    text-transform: uppercase;
+    background: transparent;
+}
+.content-p{
+    margin: 52px 0 0 0;
+}
+.content-h{
+    margin: 35px 0 0 0;
+    font-size: 28px;
+    font-weight: 600;
 }
 @media screen and (min-width: 768px){
-	.content{
-		max-width: 60vh;
+    .slide{
+        max-width: 870px;
+    }
+	.content-p{
+		max-width: 328px;
+        margin-top: 110px;    
+        margin-left: 60px;
 	}
+    .content-h{
+        margin-top: 77px;
+        font-size: 48px;
+        margin-left: 60px;
+    }
+   .content-p + button{
+        margin-top: 50px;
+        margin-left: 60px;
+        margin-bottom: 100px;
+    }
+    #second{
+        text-align: center;
+        .content-h,{
+            margin-right: 60px;  
+        }
+        .content-p{
+            margin: 100px auto 0 auto;
+        }
+        .content-p + button{
+            margin: 50px auto 100px auto;
+        }
+    }
+    #third{
+        text-align: right;
+        .content-h, .content-p,
+        .content-p + button{
+            margin-right: 60px;
+        }
+        .content-p{
+            float: right;
+        }
+        .content-p + button{
+            clear: both;
+            float: right;
+            margin: 50px 60px 100px 0;
+        }
+    }
 }
-
 //Nav
 
 .slide-nav{
 	width: 100%;
+    max-width: 878px;
 	height: 1rem;
 	position: absolute;
 	bottom: 5%;
@@ -94,24 +177,24 @@ $p-timing: opacity 0.2s 0.9s ease;
 .dots{
 	display: inline-block;
 	z-index: 99;
-	height: 1.5vh; width: 1.5vh;
+	height: 10px; width: 10px;
 	top: -5px;
 	margin: 1vh;
 	position: relative;
-	border: solid -0.4vh (255,255,255, 0.3);
+	border: solid -5px (255,255,255, 0.3);
 	border-radius: 50%;
 	transition: all 0.35s ease-in-out;
 	@include transition-dots;
 	background: rgba(255,255,255, 0.3);
 }
 .dots:hover{
-	border: solid 0.4vh $primary;
+	border: solid 4px $primary;
 }
 #event1:checked ~ .slide-nav #dot1, 
 #event2:checked ~ .slide-nav #dot2, 
 #event3:checked ~ .slide-nav #dot3{
-	border: solid 0.4vh $primary;
-	background: rgba(255,255,255,0);
+	border: solid 3px $primary;
+	background: transparent;
 }
 
 ///Slider Images///
@@ -131,12 +214,6 @@ $p-timing: opacity 0.2s 0.9s ease;
 
 
 
-///Slider Events///
 
-#event1:checked + #first, 
-#event2:checked + #second, 
-#event3:checked + #third{
-	@include left-checked;
-}
 
 

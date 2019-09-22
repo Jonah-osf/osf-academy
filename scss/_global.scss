@@ -6,7 +6,7 @@ $main-font: 'Lato', sans-serif;
 $second-font: 'Quicksand', sans-serif;
 $third-font: 'Sniglet', cursive;
 $primary: rgba(255,255,255, 1);
-$secondary: #262a33;
+$secondary: rgba(38, 42, 51, 1);
 $tertiary: rgba(70,65,62,1);
 $border-color: #f4f1eb;
 
@@ -55,7 +55,7 @@ li{
 ul{
     @include spacing-reset;
 }
-a{
+a, button{
     cursor: pointer;
 }
 //Dropdown menu

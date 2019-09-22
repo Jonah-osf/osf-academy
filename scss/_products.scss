@@ -1,26 +1,125 @@
+@mixin tile-details{
+	height: 40px;
+    width: 100%;
+    @include spacing-reset;
+    cursor: pointer;
+}
 .products{
-    height: 500px;
+    height: 510px;
     background: $secondary;
+    @include anchor-reset;
+    box-sizing: border-box;
+    text-align: center;
+    a{
+        @include spacing-reset;
+    }
+    h1{
+        margin: 40px auto;
+        max-width: 600px;
+        @include spacing-reset;
+        font-size: 18px;
+        color: $primary;
+        position: relative;
+        h1::before{
+            content: "";
+            width: 120px;
+            height: 2px;
+            position: absolute;
+            display: block;
+            background: $primary;
+            left: 0;
+            top: 50%;
+        }
+        h1::after{
+            content: "";
+            width: 120px;
+            height: 2px;
+            position: absolute;
+            display: block;
+            background: $primary;
+            right: 0;
+            top: 50%;
+        }
+    }
 }
 .products-box{
-    height: 365px;
+    height: 376px;
     width: 1000%;
     @include spacing-reset;
     display: flex;
+    text-align: center;
+    color: $secondary;
     figure{
-        height: 365px;
+        margin: 0 30px;
+        height: 376px;
         width: 290px;
-        display: inline-block;
+        display: block;
+        overflow: hidden;
+        border-radius: 5px;
         img{
-            object-fit: cover;
             @include spacing-reset;
             display: block;
-        }
-        div{
-            height: 105px;
+            object-fit: cover;
+            height: 270px;
             width: 100%;
-            @include spacing-reset;
-            background: $primary;
         }
+    }
+    figure:hover .tile-overlay{
+        
+    }
+}
+.tile-overlay{
+    height: 376px;
+    width: 290px;
+    background: rgba(65, 215, 170, 1);
+    border-radius: 5px;
+}
+.tile-info{
+    height: 55px;
+    width: 205px;
+    margin: 0 auto;
+    padding-top: 13px;
+    box-sizing: border-box;
+}
+.tile-wrap{
+    box-sizing: border-box;
+    padding-bottom: 8px;
+    height: 106px;
+    width: 100%;
+    background: $primary;
+
+}
+.tile-price{
+    @include tile-details;
+    @include spacing-reset;
+    @include centered-flex;
+    line-height: 50px;
+}
+.tile-button{
+    @include tile-details;
+    font-size: 0;
+    text-transform: uppercase;
+    line-height: 35px;
+    span:nth-child(1){
+        @include spacing-reset;
+        width: 102.5px;
+        height: 37px;
+        display: inline-block;
+        border: solid 3px rgba(239, 239, 239);
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+        font-size: 14px;
+        color: rgba(94, 196, 110,1);
+    }
+    span:nth-child(2){
+        @include spacing-reset;
+        width: 102.5px;
+        height: 37px;
+        display: inline-block;
+        border: solid 3px rgba(239, 239, 239);
+        border-left: 1px;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        font-size: 14px;
     }
 }

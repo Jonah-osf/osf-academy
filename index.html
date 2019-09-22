@@ -3,7 +3,7 @@
 <head>
 	<title id="title">OSF Academy</title>
     <!--Font -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,900|Sniglet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900|Sniglet&display=swap" rel="stylesheet">
     <!--Styles -->
 	<link rel="stylesheet" type="text/css" href="css/home.css">
     <!-- Meta -->
@@ -66,24 +66,32 @@
 	<div class="slider-box">
 		<input type="radio" name="slideshow" id="event1" checked>
         <div class="slide bg1" id="first">
-            <h1 class="content_h">Control and manage any device with cloud solutions</h1>
-            <p class="content">
+            <h1 class="content-h">Control and manage any device with cloud solutions</h1>
+            <p class="content-p">
             Improve business performance and the user experience with the right mix of Iot technology and processes.
             </p>
+            <button>
+                View More
+            </button>
         </div>
 		<input type="radio" name="slideshow" id="event2">
         <div class="slide bg2" id="second">
-            <h1 class="content_h">Control and manage any device with cloud solutions.</h1>
-            <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>	
+            <h1 class="content-h">Control and manage any device with cloud solutions.</h1>
+            <p class="content-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <button>
+                <a>View More</a>
+            </button>	
         </div>
 		<input type="radio" name="slideshow" id="event3">
         <div class="slide bg3" id="third">
-            <h1 class="content_h">Control and manage any device with cloud solutions</h1>
-            <p class="content">Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <h1 class="content-h">Control and manage any device with cloud solutions</h1>
+            <p class="content-p">Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.
             </p>
+            <button>
+                View More
+            </button>
         </div>
 	<!--Slider-nav -->
 		<div class="slide-nav">
@@ -97,13 +105,73 @@
 <article class="products">
     <h1>Popular Items</h1>
     <section class="products-box">
-        <figure><img src="files/tile-1.svg"><div></div></figure><figure><img src="files/tile-1.svg"><div></div></figure><figure><img src="files/tile-1.svg"><div></div></figure><figure><img src="files/tile-1.svg"><div></div></figure><figure><img src="files/tile-1.svg"><div></div></figure>
+        <figure>
+            <img src="files/tile-1.svg">
+            <div class="tile-wrap">
+                <div class="tile-info">
+                    Kristina Dam Oak Table With White Marble Top
+                </div>
+                <div class="tile-price">
+                    $ 799.99
+                </div>
+            </div>
+            <div class="tile-overlay"></div>
+        </figure>
+        <figure>
+            <img src="files/tile-2.svg">
+            <div class="tile-wrap">
+                <div class="tile-info">
+                    Hay - About A Lounge 
+                    Chair AAL 93
+                </div>
+                <div class="tile-button">
+                    <a href="#"><span>$659.55</span><span>buy now</span></a>
+                 </div>
+            </div>
+            <div class="tile-overlay"></div>
+        </figure>
+        <figure>
+            <img src="files/tile-3.svg">
+            <div class="tile-wrap">
+                <div class="tile-info">
+                    Activate Facial Mask and Charcoal Soap 
+                </div>
+                 <div class="tile-price">
+                    $ 129.55
+                </div>
+            </div>
+            <div class="tile-overlay"></div>
+        </figure>
+        <figure>
+            <img src="files/tile-4.svg">
+            <div class="tile-wrap">
+                <div class="tile-info">
+                    Kristina Dam Oak Table With White Marble
+                </div>
+                <div class="tile-price">
+                    $ 299.99
+                </div>
+            </div>
+            <div class="tile-overlay"></div>
+        </figure>
+        <figure>
+            <img src="files/tile-5.svg">
+            <div class="tile-wrap">
+                <div class="tile-info">
+                    Hay - About A Lounge  Chair AAL 93
+                </div>
+                <div class="tile-price">
+                    $ 659.55
+                </div>
+            </div>
+            <div class="tile-overlay"></div>
+        </figure>
     </section>
 </article>
     
 <section class="banner">
 <h1>Banner OSF Theme</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate quaerat voluptatem voluptatum unde molestiae.</p>
 </section>
 <article class="services">
 	<section>
@@ -120,7 +188,7 @@
 			<h1>Method</h1>
 			<p>A standardized methodology designed to deliver measurable business results and predicatable cost</p>
 		</div>
-		<figure class="svg-container">
+        <figure class="svg-container">
 			<img src="files/recycle.svg" class="service-svg">
 		</figure>
 	</section>
@@ -199,7 +267,8 @@
     </nav>
 </footer>
 <!-- Jquery -->
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js">
+</script>
 <script src="js/m-dropdown.js"></script>
 </body>
 </html>

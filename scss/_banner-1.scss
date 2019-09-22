@@ -1,31 +1,48 @@
 
 .banner{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	text-align: center;
+	height: 185px; width: 100vw;
+    @include centered-flex;
+    flex-direction: column;
 	@include spacing-reset;
-	height: 33.33vh; width: 100%;
-	background: no-repeat url(../files/banner-osf.svg) 50% 40%;
+    text-align: center;
+    color: $primary;
+	background: no-repeat url(../files/banner-osf.svg) right;
     background-size: cover;
 	h1{
 		width: 100%;
-        margin: 30px 0 40px 0;
+        @include spacing-reset;
 		font-size: 30px;
+        font-weight: 600;
 	}
 	p{
+        margin-top: 40px;
 		width: 95%;
-		margin: 0 0 auto 0;
         font-size: 14px;
         font-weight: 300;
 	}
-	p, h1{;
-		color: $primary;
-	}
-	@media screen and (min-width: 768px){
-	p, h1{
-		max-width: 50vh;
+	p{
+        max-width: 75vw;
 	}
 }
+@media screen and (min-width: 768px){
+    .banner{
+        height: 250px;
+        h1{
+            font-size: 39px;
+        }
+        p{
+            max-width: 40vw;
+	    }
+    }
+}
+@media screen and (min-width: 1280px){
+    .banner{
+        height: 400px;
+        h1{
+            font-size: 48px;
+        }
+        p{
+            max-width: 40vw;
+	    }
+    }
 }

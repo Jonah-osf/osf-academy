@@ -71,7 +71,9 @@ $anchor-close-s: 200ms ease-in-out;
     height: 280px;
     margin: 20px 0;
     border-radius: 8px;
-    background: url(../files/nav-img.svg);
+    transform: scaleX(-1);
+    background: url($slider1) 100% 100% no-repeat $secondary;
+    background-size: cover;
 }
 
 #nav-input{

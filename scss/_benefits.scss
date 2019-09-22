@@ -4,41 +4,35 @@
 	flex-direction: column;
 	height: 100vh;
 	width: 100vw;
-    padding-top: 30px;
+    padding: 30px 15px 0 15px;
+    box-sizing: border-box;
 	background: $tertiary;
 	color: $primary;
 	section{
 		display: flex;
 		margin: 0 auto;
 		height: 33.33%;
-		padding: 0 15px;
 		div, figure{
 			display: flex;
 			flex-direction: column;
-			align-items: center;
 			@include spacing-reset;
 			height: 100%;
 			width: 50%;
 		}
+        figure{
+            align-items: center;
+        }
 		div{
-			align-items: left;
-
 			h1{
-				height: 20%;
-				width: 100%;
-                min-width: 125px;
 				@include spacing-reset;
 				font-size: 18px;
 				text-transform: uppercase;
 				font-weight: 400;
 			}
 			p{
-				height: 90%;
-				width: 100%;
-                margin: 0;
-                min-width: 125px;
+                max-width: 60vw;
+                margin-top: 20px;
                 margin-bottom: auto;
-				padding: 0;
 				font-size: 14px;
                 font-weight: 300;
 				color: rgba(255,255,255,0.4);
@@ -50,7 +44,22 @@
 	display: flex;
 }
 .service-svg{
-	width: 12vh;
-	height: 12vh;
 	margin-bottom: auto;
+}
+@media screen and (min-width: 768px){
+    .services{
+        height: 200px;
+        width: 100vwh;
+        flex-direction: row;
+        section{
+            @include spacing-reset;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 33.33%;
+        }
+        section:nth-of-type(2) > div{
+            order: 2;
+        }
+    }
 }
