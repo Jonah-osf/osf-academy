@@ -1,7 +1,7 @@
 $dots-s: all 0.35s ease-out;
-$slider-s: left 1.2s ease-in-out;
-$h-timing: opacity 1s 0.9s ease-in-out;
-$p-timing: opacity 1s 1s ease-in-out;
+$slider-s: left 1s ease-in-out;
+$h-timing: opacity 1s 1s ease-in-out;
+$p-timing: opacity 0.8s 1.2s ease-in-out;
 @mixin transition-dots{
 	transition: $dots-s;
 	-moz-transition: $dots-s;
@@ -44,13 +44,14 @@ $p-timing: opacity 1s 1s ease-in-out;
 	input{
 		opacity: 0;
 	}
+    @include anchor-reset;
 }
 .slider-box{
 	margin: auto auto; 
 	position: relative;
 	height: 510px; width: 100%;
 	border-radius: 5px;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 ///Slider Events///
 
@@ -81,7 +82,7 @@ $p-timing: opacity 1s 1s ease-in-out;
 	top: 0;
 	left: 160%;
 	@include spacing-reset;
-	transition: left 0.8s;
+	transition: left 0.8s 0.5s;
 	border-radius: 5px;
 	color: $primary;
 }
@@ -109,59 +110,12 @@ $p-timing: opacity 1s 1s ease-in-out;
     background: transparent;
 }
 .content-p{
-    margin: 52px 0 0 0;
+    margin: 52px 15px 0 15px;
 }
 .content-h{
-    margin: 35px 0 0 0;
+    margin: 35px 15px 0 15px;
     font-size: 28px;
     font-weight: 600;
-}
-@media screen and (min-width: 768px){
-    .slide{
-        max-width: 870px;
-    }
-	.content-p{
-		max-width: 328px;
-        margin-top: 110px;    
-        margin-left: 60px;
-	}
-    .content-h{
-        margin-top: 77px;
-        font-size: 48px;
-        margin-left: 60px;
-    }
-   .content-p + button{
-        margin-top: 50px;
-        margin-left: 60px;
-        margin-bottom: 100px;
-    }
-    #second{
-        text-align: center;
-        .content-h,{
-            margin-right: 60px;  
-        }
-        .content-p{
-            margin: 100px auto 0 auto;
-        }
-        .content-p + button{
-            margin: 50px auto 100px auto;
-        }
-    }
-    #third{
-        text-align: right;
-        .content-h, .content-p,
-        .content-p + button{
-            margin-right: 60px;
-        }
-        .content-p{
-            float: right;
-        }
-        .content-p + button{
-            clear: both;
-            float: right;
-            margin: 50px 60px 100px 0;
-        }
-    }
 }
 //Nav
 
@@ -210,6 +164,54 @@ $p-timing: opacity 1s 1s ease-in-out;
 .bg3{
 	background: url($slider3) center no-repeat;
 	background-size: cover;
+}
+// Responsive
+@media screen and (min-width: 768px){
+    .slide{
+        max-width: 870px;
+    }
+	.content-p{
+		max-width: 328px;
+        margin-top: 110px;    
+        margin-left: 60px;
+	}
+    .content-h{
+        margin-top: 77px;
+        font-size: 48px;
+        margin-left: 60px;
+    }
+   .content-p + button{
+        margin-top: 50px;
+        margin-left: 60px;
+        margin-bottom: 100px;
+    }
+    #second{
+        text-align: center;
+        .content-h,{
+            margin-right: 60px;  
+        }
+        .content-p{
+            margin: 100px auto 0 auto;
+        }
+        .content-p + button{
+            margin: 50px auto 100px auto;
+        }
+    }
+    #third{
+        text-align: right;
+        .content-h, .content-p,
+        .content-p + button{
+            margin-right: 60px;
+        }
+        .content-p{
+            float: right;
+        }
+        .content-p + button{
+            clear: both;
+            float: right;
+            margin: 50px 60px 100px 0;
+        }
+    }
 }
 
 

@@ -7,12 +7,6 @@ footer{
     section, ul{
         @include spacing-reset;
     }
-    #osf-email{
-        
-    }
-    #copyright{
-        margin: 20px 0 25px 15px;
-    }
     @include anchor-reset;
     figure{
         padding: 0;
@@ -27,13 +21,14 @@ footer{
     }
 }
 .foot-nav{
+    box-sizing: border-box;
+    padding: 20px 15px 0 15px;
     a.drop{
         font-weight: 500;
-        margin: 14px 15px;
+        margin: 14px 0;
     }
     .drop-first{
         font-size: 13px;
-        margin-left: 15px;
         li{
             margin: 14px 0;
         }
@@ -41,6 +36,12 @@ footer{
     .geo > li{
         margin-bottom: 25px;
     }
+}
+#osf-email{
+        
+}
+#copyright{
+    margin-bottom: 25px;
 }
 .foot-icons{
     height: 55px;

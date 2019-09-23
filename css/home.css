@@ -35,7 +35,7 @@ a, button {
 
 .drop {
   display: flex;
-  width: calc(100% - 30px);
+  width: 100%;
   list-style-type: none;
   text-transform: uppercase;
 }
@@ -85,37 +85,35 @@ header {
   height: 62px;
   width: 100%;
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
+  font-size: 10px;
   z-index: 100;
-  text-align: center;
-  font-size: 2vh;
   background: white;
   border-bottom: solid 2px #f4f1eb;
 }
 header figure {
   display: inline-flex;
-  width: 7.3%;
   height: 100%;
   min-height: 60px;
-  text-align: center;
   margin: 0;
   padding: 0;
 }
-header figure > img {
-  height: 100%;
+header figure img {
+  min-height: 100%;
+}
+header a {
+  margin: 0;
+  padding: 0;
 }
 
-@media screen and (min-width: 768px) {
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
 .top-nav {
   width: 100%;
-  padding: 8px 0 0 15px;
+  box-sizing: border-box;
+  padding: 8px 15px 0 15px;
   top: 100%;
   left: 0;
   position: absolute;
@@ -159,7 +157,7 @@ header figure > img {
 
 .nav-img {
   opacity: 0;
-  width: calc(100% - 30px);
+  width: 100%;
   height: 280px;
   margin: 20px 0;
   border-radius: 8px;
@@ -254,6 +252,10 @@ header figure > img {
 .slider input {
   opacity: 0;
 }
+.slider a:link, .slider a:visited, .slider a:hover, .slider a:active {
+  color: inherit;
+  text-decoration: none;
+}
 
 .slider-box {
   margin: auto auto;
@@ -261,17 +263,17 @@ header figure > img {
   height: 510px;
   width: 100%;
   border-radius: 5px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 #event1:checked + #first,
 #event2:checked + #second,
 #event3:checked + #third {
-  transition: left 1.2s ease-in-out;
-  -moz-transition: left 1.2s ease-in-out;
-  -webkit-transition: left 1.2s ease-in-out;
-  -o-transition: left 1.2s ease-in-out;
-  -ms-transition: left 1.2s ease-in-out;
+  transition: left 1s ease-in-out;
+  -moz-transition: left 1s ease-in-out;
+  -webkit-transition: left 1s ease-in-out;
+  -o-transition: left 1s ease-in-out;
+  -ms-transition: left 1s ease-in-out;
   z-index: 2;
   left: 0;
 }
@@ -288,33 +290,33 @@ header figure > img {
 #event1:checked + #first .content-h,
 #event2:checked + #second .content-h,
 #event3:checked + #third .content-h {
-  transition: opacity 1s 0.9s ease-in-out;
-  -moz-transition: opacity 1s 0.9s ease-in-out;
-  -webkit-transition: opacity 1s 0.9s ease-in-out;
-  -o-transition: opacity 1s 0.9s ease-in-out;
-  -ms-transition: opacity 1s 0.9s ease-in-out;
+  transition: opacity 1s 1s ease-in-out;
+  -moz-transition: opacity 1s 1s ease-in-out;
+  -webkit-transition: opacity 1s 1s ease-in-out;
+  -o-transition: opacity 1s 1s ease-in-out;
+  -ms-transition: opacity 1s 1s ease-in-out;
   z-index: 2;
   opacity: 1;
 }
 #event1:checked + #first .content-p,
 #event2:checked + #second .content-p,
 #event3:checked + #third .content-p {
-  transition: opacity 1s 1s ease-in-out;
-  -moz-transition: opacity 1s 1s ease-in-out;
-  -webkit-transition: opacity 1s 1s ease-in-out;
-  -o-transition: opacity 1s 1s ease-in-out;
-  -ms-transition: opacity 1s 1s ease-in-out;
+  transition: opacity 0.8s 1.2s ease-in-out;
+  -moz-transition: opacity 0.8s 1.2s ease-in-out;
+  -webkit-transition: opacity 0.8s 1.2s ease-in-out;
+  -o-transition: opacity 0.8s 1.2s ease-in-out;
+  -ms-transition: opacity 0.8s 1.2s ease-in-out;
   z-index: 2;
   opacity: 1;
 }
 #event1:checked + #first .content-p + button,
 #event2:checked + #second .content-p + button,
 #event3:checked + #third .content-p + button {
-  transition: opacity 1s 1s ease-in-out;
-  -moz-transition: opacity 1s 1s ease-in-out;
-  -webkit-transition: opacity 1s 1s ease-in-out;
-  -o-transition: opacity 1s 1s ease-in-out;
-  -ms-transition: opacity 1s 1s ease-in-out;
+  transition: opacity 0.8s 1.2s ease-in-out;
+  -moz-transition: opacity 0.8s 1.2s ease-in-out;
+  -webkit-transition: opacity 0.8s 1.2s ease-in-out;
+  -o-transition: opacity 0.8s 1.2s ease-in-out;
+  -ms-transition: opacity 0.8s 1.2s ease-in-out;
   z-index: 2;
   opacity: 1;
 }
@@ -328,7 +330,7 @@ header figure > img {
   left: 160%;
   margin: 0;
   padding: 0;
-  transition: left 0.8s;
+  transition: left 0.8s 0.5s;
   border-radius: 5px;
   color: white;
 }
@@ -360,67 +362,15 @@ header figure > img {
 }
 
 .content-p {
-  margin: 52px 0 0 0;
+  margin: 52px 15px 0 15px;
 }
 
 .content-h {
-  margin: 35px 0 0 0;
+  margin: 35px 15px 0 15px;
   font-size: 28px;
   font-weight: 600;
 }
 
-@media screen and (min-width: 768px) {
-  .slide {
-    max-width: 870px;
-  }
-
-  .content-p {
-    max-width: 328px;
-    margin-top: 110px;
-    margin-left: 60px;
-  }
-
-  .content-h {
-    margin-top: 77px;
-    font-size: 48px;
-    margin-left: 60px;
-  }
-
-  .content-p + button {
-    margin-top: 50px;
-    margin-left: 60px;
-    margin-bottom: 100px;
-  }
-
-  #second {
-    text-align: center;
-  }
-  #second .content-h {
-    margin-right: 60px;
-  }
-  #second .content-p {
-    margin: 100px auto 0 auto;
-  }
-  #second .content-p + button {
-    margin: 50px auto 100px auto;
-  }
-
-  #third {
-    text-align: right;
-  }
-  #third .content-h, #third .content-p,
-#third .content-p + button {
-    margin-right: 60px;
-  }
-  #third .content-p {
-    float: right;
-  }
-  #third .content-p + button {
-    clear: both;
-    float: right;
-    margin: 50px 60px 100px 0;
-  }
-}
 .slide-nav {
   width: 100%;
   max-width: 878px;
@@ -478,6 +428,58 @@ header figure > img {
   background-size: cover;
 }
 
+@media screen and (min-width: 768px) {
+  .slide {
+    max-width: 870px;
+  }
+
+  .content-p {
+    max-width: 328px;
+    margin-top: 110px;
+    margin-left: 60px;
+  }
+
+  .content-h {
+    margin-top: 77px;
+    font-size: 48px;
+    margin-left: 60px;
+  }
+
+  .content-p + button {
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-bottom: 100px;
+  }
+
+  #second {
+    text-align: center;
+  }
+  #second .content-h {
+    margin-right: 60px;
+  }
+  #second .content-p {
+    margin: 100px auto 0 auto;
+  }
+  #second .content-p + button {
+    margin: 50px auto 100px auto;
+  }
+
+  #third {
+    text-align: right;
+  }
+  #third .content-h, #third .content-p,
+#third .content-p + button {
+    margin-right: 60px;
+  }
+  #third .content-p {
+    float: right;
+  }
+  #third .content-p + button {
+    clear: both;
+    float: right;
+    margin: 50px 60px 100px 0;
+  }
+}
 .banner {
   height: 185px;
   width: 100vw;
@@ -709,7 +711,7 @@ a, button {
 
 .drop {
   display: flex;
-  width: calc(100% - 30px);
+  width: 100%;
   list-style-type: none;
   text-transform: uppercase;
 }
@@ -836,9 +838,6 @@ footer section, footer ul {
   margin: 0;
   padding: 0;
 }
-footer #copyright {
-  margin: 20px 0 25px 15px;
-}
 footer a:link, footer a:visited, footer a:hover, footer a:active {
   color: inherit;
   text-decoration: none;
@@ -855,18 +854,25 @@ footer figure img {
   width: auto;
 }
 
+.foot-nav {
+  box-sizing: border-box;
+  padding: 20px 15px 0 15px;
+}
 .foot-nav a.drop {
   font-weight: 500;
-  margin: 14px 15px;
+  margin: 14px 0;
 }
 .foot-nav .drop-first {
   font-size: 13px;
-  margin-left: 15px;
 }
 .foot-nav .drop-first li {
   margin: 14px 0;
 }
 .foot-nav .geo > li {
+  margin-bottom: 25px;
+}
+
+#copyright {
   margin-bottom: 25px;
 }
 

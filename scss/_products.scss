@@ -105,18 +105,18 @@
         width: 102.5px;
         height: 37px;
         display: inline-block;
-        border: solid 3px rgba(239, 239, 239);
+        border: solid 3px $br-color;
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
         font-size: 14px;
-        color: rgba(94, 196, 110,1);
+        color: $money-green;
     }
     span:nth-child(2){
         @include spacing-reset;
         width: 102.5px;
         height: 37px;
         display: inline-block;
-        border: solid 3px rgba(239, 239, 239);
+        border: solid 3px $br-color;
         border-left: 1px;
         border-top-right-radius: 25px;
         border-bottom-right-radius: 25px;

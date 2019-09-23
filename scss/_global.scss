@@ -5,10 +5,18 @@
 $main-font: 'Lato', sans-serif;
 $second-font: 'Quicksand', sans-serif;
 $third-font: 'Sniglet', cursive;
+//Global Colors
 $primary: rgba(255,255,255, 1);
 $secondary: rgba(38, 42, 51, 1);
 $tertiary: rgba(70,65,62,1);
-$border-color: #f4f1eb;
+$quaternary: rgba(240, 236, 233,1);
+$quinary: rgba(143, 174, 80, 1);
+$senary: rgba(69, 65, 62,1);
+$septenary: rgba(133, 188, 34);
+//Specific Colors
+$br-color: rgba(239, 239, 239);
+$border-color: rgba(244, 241, 235, 1);
+$money-green: rgba(94, 196, 110,1);
 
 @mixin full-dimensions{
 	height: 100%; width: 100%;
@@ -61,7 +69,7 @@ a, button{
 //Dropdown menu
 .drop{
     display: flex;
-    width: calc(100% - 30px);
+    width: 100%;
     list-style-type: none;
     text-transform: uppercase;
     img{
