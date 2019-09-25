@@ -7,6 +7,7 @@
     <!--Styles -->
 	<link rel="stylesheet" type="text/css" href="css/home.css">
     <!-- Meta -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body class="preload">
@@ -15,12 +16,29 @@
     <label for="nav-input" class="nav-toggle">
         <span></span>
     </label>
-    <a href="index.html">
-    <figure>
-        <img src="files/logo.svg" alt="OSF Academy">
-    </figure>
+    <a href="index.html" class="icon">
+        <figure>
+            <img src="files/logo.svg" alt="OSF Academy">
+        </figure>
+        <div class="heading">   
+            <h1>OSF</h1>
+            <p>Academy</p>
+        </div> 
     </a>
-    <nav class="top-nav">
+    <nav class="d-nav">
+        <ul>
+            <li>
+                <a>
+                    Services
+                    <img src="files/deliverycart.svg">
+                </a>
+            </li>
+            <li><a href="404.html">Company</a></li>
+            <li><a href="404.html">Library</a></li>
+            <li><a href="404.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <nav class="m-nav">
         <ul>
             <li>
                 <a class="drop">
@@ -64,10 +82,10 @@
         </figure>
     </nav>
 </header>
-<article class="slider">
-	<!-- Slider -->
-	<div class="slider-box">
-		<input type="radio" name="slideshow" id="event1" checked>
+<section class="slider">
+    <!-- Slider -->
+    <div class="slider-box">
+        <input type="radio" name="slideshow" id="event1" checked>
         <div class="slide bg1" id="first">
             <h1 class="content-h">Control and manage any device with cloud solutions</h1>
             <p class="content-p">
@@ -77,7 +95,7 @@
                 <a href="404.html">View More</a>
             </button>
         </div>
-		<input type="radio" name="slideshow" id="event2">
+        <input type="radio" name="slideshow" id="event2">
         <div class="slide bg2" id="second">
             <h1 class="content-h">Control and manage any device with cloud solutions.</h1>
             <p class="content-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -86,7 +104,7 @@
                  <a href="404.html">View More</a>
             </button>	
         </div>
-		<input type="radio" name="slideshow" id="event3">
+        <input type="radio" name="slideshow" id="event3">
         <div class="slide bg3" id="third">
             <h1 class="content-h">Control and manage any device with cloud solutions</h1>
             <p class="content-p">Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -96,17 +114,31 @@
                 <a href="404.html">View More</a>
             </button>
         </div>
-	<!--Slider-nav -->
-		<div class="slide-nav">
-			<label class="dots" for="event1" id="dot1"></label>
-			<label class="dots" for="event2" id="dot2"></label>
-			<label class="dots" for="event3" id="dot3"></label>
-		</div>
-	</div>
-</article>
+    <!--Slider-nav -->
+        <div class="slide-nav">
+            <label class="dots" for="event1" id="dot1"></label>
+            <label class="dots" for="event2" id="dot2"></label>
+            <label class="dots" for="event3" id="dot3"></label>
+        </div>
+    </div>
+</section>
+<aside class="sales-box">
+   <figure class="sales">
+       <h1>55%</h1>
+       <h2>Summer<br>Sales</h2>
+   </figure>
+   <section>
+       <h3>Follow us on Facebook</h3>
+       <p>Sed ut perspiciatis unde omnis iste natus error sit </p>
+       <button>
+           <a href="404.html"><img src="files/f.svg"><span>Follow</span></a>
+       </button>
+   </section>
+</aside>
 <article class="products">
     <h1>Popular Items</h1>
     <section class="products-box">
+        <input type="radio" name="productshow" id="event4" checked>
         <figure>
             <img src="files/tile-1.svg">
             <div class="tile-wrap">
@@ -119,6 +151,7 @@
             </div>
             <div class="tile-overlay"></div>
         </figure>
+        <input type="radio" name="productshow" id="event5">
         <figure>
             <img src="files/tile-2.svg">
             <div class="tile-wrap">
@@ -126,12 +159,13 @@
                     Hay - About A Lounge 
                     Chair AAL 93
                 </div>
-                <div class="tile-button">
+                <button class="tile-button">
                     <a href="404.html"><span>$659.55</span><span>buy now</span></a>
-                 </div>
+                 </button>
             </div>
             <div class="tile-overlay"></div>
         </figure>
+        <input type="radio" name="productshow" id="event6">
         <figure>
             <img src="files/tile-3.svg">
             <div class="tile-wrap">
@@ -144,6 +178,7 @@
             </div>
             <div class="tile-overlay"></div>
         </figure>
+        <input type="radio" name="productshow" id="event7">
         <figure>
             <img src="files/tile-4.svg">
             <div class="tile-wrap">
@@ -156,8 +191,57 @@
             </div>
             <div class="tile-overlay"></div>
         </figure>
+        <div class="product-nav">
+            <label class="dots" for="event4" id="dot4"></label>
+            <label class="dots" for="event5" id="dot5"></label>
+            <label class="dots" for="event6" id="dot6"></label>
+            <label class="dots" for="event7" id="dot7"></label>
+            <label class="dots" for="event8" id="dot8"></label>
+        </div>
+    </section>
+    <section class="products-box">
+        <input type="radio" name="productshow" id="event8">
         <figure>
             <img src="files/tile-5.svg">
+            <div class="tile-wrap">
+                <div class="tile-info">
+                    Hay - About A Lounge  Chair AAL 93
+                </div>
+                <div class="tile-price">
+                    <a href="404.html">$ 659.55</a>
+                </div>
+            </div>
+            <div class="tile-overlay"></div>
+        </figure>        
+        <input type="radio" name="productshow" id="event9">
+        <figure>
+            <img src="files/tile-6.svg">
+            <div class="tile-wrap">
+                <div class="tile-info">
+                    TORY DESK CALENDAR
+                </div>
+                <div class="tile-price">
+                    <a href="404.html">$ 410.99</a>
+                </div>
+            </div>
+            <div class="tile-overlay"></div>
+        </figure>
+        <input type="radio" name="productshow" id="event10">
+        <figure>
+            <img src="files/tile-7.svg">
+            <div class="tile-wrap">
+                <div class="tile-info">
+                    CH445 Wing Chair on SUITE NY
+                </div>
+                <div class="tile-price">
+                    <a href="404.html">$ 330.55</a>
+                </div>
+            </div>
+            <div class="tile-overlay"></div>
+        </figure>
+        <input type="radio" name="productshow" id="event11">
+        <figure>
+            <img src="files/2nd.png">
             <div class="tile-wrap">
                 <div class="tile-info">
                     Hay - About A Lounge  Chair AAL 93

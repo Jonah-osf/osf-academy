@@ -63,4 +63,9 @@ footer{
         margin: 0 15px;
     }
 }
+@media screen and (min-width: 1280px){
+    .foot-icons{
+        display: none;
+    }
+}
 

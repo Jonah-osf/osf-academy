@@ -4,53 +4,48 @@
     @include spacing-reset;
     cursor: pointer;
 }
+//Structure
 .products{
-    height: 510px;
+    position: relative;
     background: $secondary;
     @include anchor-reset;
     box-sizing: border-box;
+    padding: 1px 15px 72px 15px;
     text-align: center;
+    input{
+		display: none;
+	}
     a{
         @include spacing-reset;
     }
     h1{
-        margin: 40px auto;
-        max-width: 600px;
-        @include spacing-reset;
+        margin: 35.5px auto;
+        max-width: 1170px;
+        @include centered-flex;
         font-size: 18px;
+        font-weight: 800;
         color: $primary;
-        position: relative;
-        h1::before{
-            content: "";
-            width: 120px;
-            height: 2px;
-            position: absolute;
-            display: block;
-            background: $primary;
-            left: 0;
-            top: 50%;
-        }
-        h1::after{
-            content: "";
-            width: 120px;
-            height: 2px;
-            position: absolute;
-            display: block;
-            background: $primary;
-            right: 0;
-            top: 50%;
-        }
+    }
+    h1::before,
+    h1::after {
+        content: '';
+        border-top: 3px solid $prod-b;
+        margin: 0 20px 0 0;
+        flex: 1 0 20px;
+    }
+   h1::after {
+        margin: 0 0 0 20px;
     }
 }
 .products-box{
+    @include centered-flex;
     height: 376px;
-    width: 1000%;
     @include spacing-reset;
     display: flex;
     text-align: center;
     color: $secondary;
     figure{
-        margin: 0 30px;
+        @include spacing-reset;
         height: 376px;
         width: 290px;
         display: block;
@@ -68,9 +63,29 @@
         
     }
 }
+///Nav///
+.product-nav{
+    position: absolute;
+    height: 72px;
+    bottom: 0; left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+	@include centered-flex;
+}
+///Events///
+#event4:checked ~ .product-nav #dot4, 
+#event5:checked ~ .product-nav #dot5, 
+#event6:checked ~ .product-nav #dot6,
+#event7:checked ~ .product-nav #dot7,
+#event8:checked ~ .product-nav #dot8{
+	border: solid 3px $primary;
+	background: transparent;
+}
+
+//Tile Styles//
 .tile-overlay{
     height: 376px;
-    width: 290px;
+    width: 100%;
     background: rgba(65, 215, 170, 1);
     border-radius: 5px;
 }
@@ -121,5 +136,15 @@
         border-top-right-radius: 25px;
         border-bottom-right-radius: 25px;
         font-size: 14px;
+    }
+}
+@media screen and (min-width: 768px){
+    .products{
+        padding: 1px 30px 70px 30px !important;
+    }
+}
+@media screen and (min-width: 1170px){
+    .products{
+        padding: 1px 55px 70px 55px !important;
     }
 }

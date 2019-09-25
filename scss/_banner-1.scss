@@ -6,7 +6,7 @@
 	@include spacing-reset;
     text-align: center;
     color: $primary;
-	background: no-repeat url(../files/banner-osf.svg) right;
+	background: no-repeat url(../files/banner-osf.svg);
     background-size: cover;
 	h1{
 		width: 100%;

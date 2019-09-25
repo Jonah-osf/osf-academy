@@ -1,3 +1,60 @@
+/// Desktop Navigation ///
+.d-nav, ul, li{
+    height: 100%;
+    @include centered-flex;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    ul > li{
+        width: 94px;
+        margin-right: 17px;
+        a{
+            margin-right: auto;
+        }
+    }
+    ul > li:nth-last-child(1){
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Mobile Navigation///
 $nav-open-s: 400ms ease-in;
 $x-s: cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
 $anchor-open-s: .5s ease-in-out;
@@ -30,7 +87,7 @@ $anchor-close-s: 200ms ease-in-out;
     -o-transition: $anchor-close-s;
     -ms-transition: $anchor-close-s;
 }
-.top-nav{
+.m-nav{
     width: 100%;
     box-sizing: border-box;
     padding: 8px 15px 0 15px;
@@ -73,7 +130,7 @@ $anchor-close-s: 200ms ease-in-out;
     margin: 20px 0;
     border-radius: 8px;
     transform: scaleX(-1);
-    background: url($slider1) 100% 100% no-repeat $secondary;
+    background: url($slider1) 100% 5% no-repeat $secondary;
     background-size: cover;
 }
 

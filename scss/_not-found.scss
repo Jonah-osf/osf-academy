@@ -1,8 +1,10 @@
+//Structure
 article{
-    margin-bottom: 45px;
+    margin-bottom: 30px;
     width: 100vw;
+    margin-bottom: 45px;
     margin-top: 60px;
-    padding: 15px 15px 0 15px;
+    padding: 15px;
     box-sizing: border-box;
     p, h1, h2, h3, a, section, figure{
         @include spacing-reset;
@@ -10,20 +12,6 @@ article{
     @include anchor-reset;
     p{
         max-width: 578px;
-    }
-    .oops{
-       display: none; 
-    }
-    h2{
-        width: 100%;
-        margin: 25px 0 15px 0;
-        font-size: 48px;
-        color: $senary;
-    }
-    h3{
-        @include spacing-reset;
-        font-size: 24px;
-        color: rgba(0,0,0,1);
     }
     section{
         position: relative;
@@ -48,16 +36,43 @@ article{
             background: no-repeat url(../files/search-icon.svg) 95% $primary;
         }
     }
-    p:nth-child(1){
-        max-width: none;
-        margin-top: 15px;
-        padding: 0;
-    }
-    p:nth-child(1), h2{
-        text-align: center;
+    //paragraph & header styling + media queries
+    .return{
+        font-weight: 400;
+        word-spacing: 14px;
+        margin: 15px auto 0 auto;
+        font-size: 13px;
+        color: $senary;
         a{
-            color: $septenary;
+            color: $septenary !important;
         }
+    }
+    h2{
+        width: 100%;
+        max-width: 1170px;
+        text-align: center;
+    }
+    .four04{
+        @include centered-flex;
+        margin: 25px auto 15px auto;
+        font-size: 48px;
+        color: $senary;
+    }
+    .four04::before,
+    .four04::after {
+        content: '';
+        border-top: 1px solid rgba(69, 65, 62, 0.2);
+        margin: 0 20px 0 0;
+        flex: 1 0 20px;
+    }
+   .four04::after {   
+        margin: 0 0 0 20px;
+    }
+    h3{
+        @include spacing-reset;
+        font-size: 24px;
+        font-weight: 800;
+        color: rgba(0,0,0,1);
     }
     p:nth-child(3){
         margin: 30px 0 17px 0;
@@ -89,7 +104,7 @@ article{
     }
 }
 @media screen and (min-width: 1280px){
-    p:nth-child(1){
+   .return{
         margin-top: 55px !important;
     }
     p:nth-child(3){
@@ -97,7 +112,6 @@ article{
     }
     .oops{
         display: block !important;
-        opacity: 1;
         font-size: 113px;
         font-weight: 800;
         color: $septenary;
@@ -105,4 +119,7 @@ article{
         left: 8%;    
         top: 33%;
     }
+}
+.oops{
+   display: none; 
 }

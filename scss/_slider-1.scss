@@ -38,18 +38,18 @@ $p-timing: opacity 0.8s 1.2s ease-in-out;
 }
 
 .slider{
-	display: block;
-	margin: 79px auto 17px auto; 
-	height: 510px; width: 90%;
+	display: inline-block;
+	margin: 79px auto 17px auto;
+    height: 510px;
+	width: 90%;
 	input{
 		opacity: 0;
 	}
     @include anchor-reset;
 }
 .slider-box{
-	margin: auto auto; 
 	position: relative;
-	height: 510px; width: 100%;
+    @include full-dimensions;
 	border-radius: 5px;
 	overflow: hidden;
 }
@@ -78,7 +78,7 @@ $p-timing: opacity 0.8s 1.2s ease-in-out;
 .slide{
 	@include full-dimensions;
 	position: absolute;
-	z-index: -1;
+	z-index: 0;
 	top: 0;
 	left: 160%;
 	@include spacing-reset;
@@ -115,7 +115,7 @@ $p-timing: opacity 0.8s 1.2s ease-in-out;
 .content-h{
     margin: 35px 15px 0 15px;
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 700;
 }
 //Nav
 
@@ -127,20 +127,8 @@ $p-timing: opacity 0.8s 1.2s ease-in-out;
 	bottom: 5%;
 	@include centered-flex;
 	z-index: 99;
-	}
-.dots{
-	display: inline-block;
-	z-index: 99;
-	height: 10px; width: 10px;
-	top: -5px;
-	margin: 1vh;
-	position: relative;
-	border: solid -5px (255,255,255, 0.3);
-	border-radius: 50%;
-	transition: all 0.35s ease-in-out;
-	@include transition-dots;
-	background: rgba(255,255,255, 0.3);
 }
+@include dots;
 .dots:hover{
 	border: solid 4px $primary;
 }
@@ -167,8 +155,11 @@ $p-timing: opacity 0.8s 1.2s ease-in-out;
 }
 // Responsive
 @media screen and (min-width: 768px){
-    .slide{
+    .slide, .slider-box, .slider{
         max-width: 870px;
+    }
+    .slider{
+        margin-left: 30px;
     }
 	.content-p{
 		max-width: 328px;
@@ -211,6 +202,11 @@ $p-timing: opacity 0.8s 1.2s ease-in-out;
             float: right;
             margin: 50px 60px 100px 0;
         }
+    }
+}
+@media screen and (min-width: 1280px){
+    .slider{
+        margin-left: 55px;
     }
 }
 

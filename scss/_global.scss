@@ -9,12 +9,15 @@ $third-font: 'Sniglet', cursive;
 $primary: rgba(255,255,255, 1);
 $secondary: rgba(38, 42, 51, 1);
 $tertiary: rgba(70,65,62,1);
-$quaternary: rgba(240, 236, 233,1);
+$quaternary: rgba(240, 236, 233, 1);
 $quinary: rgba(143, 174, 80, 1);
-$senary: rgba(69, 65, 62,1);
-$septenary: rgba(133, 188, 34);
+$senary: rgba(69, 65, 62, 1);
+$septenary: rgba(133, 188, 34, 1);
+$octonary: rgba(59, 91, 150, 1);
+$nonary: rgba(1, 23, 70, 1);
 //Specific Colors
-$br-color: rgba(239, 239, 239);
+$prod-b: rgba(54, 59, 65,1);
+$br-color: rgba(239, 239, 239,1);
 $border-color: rgba(244, 241, 235, 1);
 $money-green: rgba(94, 196, 110,1);
 
@@ -36,7 +39,20 @@ $money-green: rgba(94, 196, 110,1);
 	align-items: center;
 	justify-content: center;
 }
-
+@mixin dots{
+    .dots{
+        display: inline-block;
+        z-index: 99;
+        height: 10px; width: 10px;
+        margin: 0 7.5px;
+        position: relative;
+        border: solid -5px (255,255,255, 0.3);
+        border-radius: 50%;
+        transition: all 0.35s ease-in-out;
+        @include transition-dots;
+        background: rgba(255,255,255, 0.3);
+    }
+}
 /////////////////////////////////////////////
 /*Global Styles*/
 ////////////////////////////////////////////
