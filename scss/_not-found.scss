@@ -1,6 +1,5 @@
 //Structure
 article{
-    margin-bottom: 30px;
     width: 100vw;
     margin-bottom: 45px;
     margin-top: 60px;
@@ -86,6 +85,9 @@ article{
     }
 }
 @media screen and (min-width: 768px){
+    article{
+        padding: 30px;
+    }
     h2{
         margin: 25px 0 52px 0;
     }
@@ -104,6 +106,9 @@ article{
     }
 }
 @media screen and (min-width: 1280px){
+    article{
+        padding: 1px 0 0 0;
+    }
    .return{
         margin-top: 55px !important;
     }

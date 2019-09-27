@@ -16,7 +16,7 @@
     <label for="nav-input" class="nav-toggle">
         <span></span>
     </label>
-    <a href="index.html" class="icon">
+    <a href="index.html" class="big-icon">
         <figure>
             <img src="files/logo.svg" alt="OSF Academy">
         </figure>
@@ -26,17 +26,64 @@
         </div> 
     </a>
     <nav class="d-nav">
-        <ul>
+        <ul class="d-menu">
             <li>
-                <a>
+                <a class="drop">
                     Services
-                    <img src="files/deliverycart.svg">
+                   <img src="files/down-arrow.svg"> 
                 </a>
+                <a class="drop-first">
+                    Product Categories
+                </a>
+                <ul class="drop-second">
+                    <li><a href="404.html">Accessories</a></li>
+                    <li><a href="404.html">Alcohol</a></li>
+                    <li><a href="404.html">Art</a></li>
+                    <li><a href="404.html">Books</a></li>
+                    <li><a href="404.html">Drinks</a></li>
+                    <li><a href="404.html">Electronics</a></li>
+                    <li><a href="404.html">Flowers & Plants</a></li>
+                    <li><a href="404.html">Food</a></li>
+                </ul>
+                <a class="drop-first">
+                    Sale
+                </a>
+                <ul class="drop-second">
+                    <li><a href="404.html">Accessories</a></li>
+                    <li><a href="404.html">Alcohol</a></li>
+                    <li><a href="404.html">Art</a></li>
+                    <li><a href="404.html">Books</a></li>
+                    <li><a href="404.html">Drinks</a></li>
+                    <li><a href="404.html">Electronics</a></li>
+                    <li><a href="404.html">Flowers & Plants</a></li>
+                    <li><a href="404.html">Food</a></li>
+                </ul>
             </li>
             <li><a href="404.html">Company</a></li>
             <li><a href="404.html">Library</a></li>
             <li><a href="404.html">Contact Us</a></li>
         </ul>
+        <ul class="d-ux">
+            <li>
+                <a class="drop">
+                   en
+                   <img src="files/down-arrow.svg">
+                </a>
+            </li>
+            <li>
+                <a class="drop">
+                    $US
+                </a>
+            </li>
+        </ul>
+        <nav class="top-icons">
+            <figure>
+                <img src="files/dark-loope-icon.svg">
+                <img src="files/dark-user-icon.svg">
+                <img src="files/dark-hearted-icon.svg">
+                <img src="files/dark-shopping-icon.svg">
+            </figure>
+        </nav>
     </nav>
     <nav class="m-nav">
         <ul>
@@ -289,11 +336,11 @@
 </article>
 <footer>
     <section>
-        <nav class="foot-nav">
-            <p id="copyright">© Copyright 2019.<br>All Rights Reserved.</p>
-            <li>
+        <ul class="foot-nav">
+            <span class="d-wrap">
+                <p class="cc">© Copyright <span id="year"></span>.<br>All Rights Reserved.</p>
                 <a class="drop">
-                    Contact
+                    <strong>Contact</strong>
                     <img src="files/down-arrow.svg">
                 </a>
                 <ul class="drop-first geo">
@@ -302,58 +349,81 @@
                         Québec, Québec G2K 2H6
                     </li>
                     <li>
-                        contact@osf-global.com
+                        <a href="mailto:contact@osf-global.com" class="openapp">contact@osf-global.com</a>
                     </li>
                     <li>
-                        +1 (888) 548-4344
+                        <a href="tel:18885484344" class="openapp">+1 (888) 548-4344</a>
                     </li>
                 </ul>
-				<li>
-                    <a class="drop">
-                        Categories
-                        <img src="files/down-arrow.svg">
-                    </a>
-                    <ul class="drop-first">
-                        <li><a href="404.html">Accessories</a></li>
-                        <li><a href="404.html">Alcohol</a></li>
-                        <li><a href="404.html">Art</a></li>
-                        <li><a href="404.html">Books</a></li>
-                        <li><a href="404.html">Drinks</a></li>
-                        <li><a href="404.html">Electronics</a></li>
-                        <li><a href="404.html">Flowers & Plants</a></li>
-                        <li><a href="404.html">Food</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="drop">
-                        About
-                        <img src="files/down-arrow.svg">
-                    </a>
-                    <ul class="drop-first">
-                        <li><a href="404.html">About Us</a></li>
-                        <li><a href="404.html">Delivery</a></li>
-                        <li><a href="404.html">Testimonials</a></li>
-                        <li><a href="404.html">Contact</a></li>
-                    </ul>
-                </li>
-            </nav>
+            </span>
+            <li class="d-wrap mid">
+                <a class="drop">
+                    <strong>Categories</strong>
+                    <img src="files/down-arrow.svg">
+                </a>
+                <ul class="drop-first">
+                    <li><a href="404.html">Accessories</a></li>
+                    <li><a href="404.html">Alcohol</a></li>
+                    <li><a href="404.html">Art</a></li>
+                    <li><a href="404.html">Books</a></li>
+                    <li><a href="404.html">Drinks</a></li>
+                    <li><a href="404.html">Electronics</a></li>
+                </ul>
+                <ul class="drop-first">
+                    <li><a href="404.html">Home</a></li>
+                    <li><a href="404.html">Jewelery</a></li>
+                    <li><a href="404.html">Kids & Baby</a></li>
+                    <li><a href="404.html">Men's Fashion</a></li>
+                    <li><a href="404.html">Mobile</a></li>
+                    <li><a href="404.html">Motorcycles</a></li>
+                    <li><a href="404.html">Movies</a></li>
+                    <li><a href="404.html">Music</a></li>
+                </ul>
+                <ul class="drop-first">
+                    <li><a href="404.html">Sports</a></li>
+                    <li><a href="404.html">Toys</a></li>
+                    <li><a href="404.html">Travel</a></li>
+                    <li><a href="404.html">Women's Fashion</a></li>
+                </ul>
+            </li>
+            <li class="d-wrap end">
+                <a class="drop">
+                    <strong>About</strong>
+                    <img src="files/down-arrow.svg">
+                </a>
+                <ul class="drop-first">
+                    <li><a href="404.html">About Us</a></li>
+                    <li><a href="404.html">Delivery</a></li>
+                    <li><a href="404.html">Testimonials</a></li>
+                    <li><a href="404.html">Contact</a></li>
+                </ul>
+            </li>
+            <figure class="d-fig">
+                <a href="https://www.facebook.com/OSFGlobalServices/" target="_blank"><img src="files/social-f.svg"></a>
+                <a href="https://www.osf-global.com/" target="_blank"><img src="files/social-g+.svg"></a>
+                <a href="https://twitter.com/osfglobal" target="_blank"><img src="files/social-t.svg"></a>
+                <a href="https://www.pinterest.ca/osfglobal/" target="_blank"><img src="files/social-p.svg"></a>
+            </figure>
+        </ul>
     </section>
-    <figure>
-        <img src="files/social-f.svg">
-        <img src="files/social-g+.svg">
-        <img src="files/social-t.svg">
-        <img src="files/social-p.svg">
+    <figure class="m-fig">
+        <a href="https://www.facebook.com/OSFGlobalServices/" target="_blank"><img src="files/social-f.svg"></a>
+        <a href="https://www.osf-global.com/" target="_blank"><img src="files/social-g+.svg"></a>
+        <a href="https://twitter.com/osfglobal" target="_blank"><img src="files/social-t.svg"></a>
+        <a href="https://www.pinterest.ca/osfglobal/" target="_blank"><img src="files/social-p.svg"></a>
     </figure>
-    <nav class="foot-icons">
-        <img src="files/loope-icon.svg">
-        <img src="files/user-icon.svg">
-        <img src="files/hearted-icon.svg">
-        <img src="files/shopping-icon.svg">
+    <nav class="bottom-icons">
+        <figure>
+            <img src="files/loope-icon.svg">
+            <img src="files/user-icon.svg">
+            <img src="files/hearted-icon.svg">
+            <img src="files/shopping-icon.svg">
+        </figure>
     </nav>
 </footer>
-<!-- Jquery -->
-<script src="https://code.jquery.com/jquery-3.4.1.js">
-</script>
-<script src="js/m-dropdown.js"></script>
+<!-- Jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<!-- JS -->
+<script src="js/navigation.js"></script>
 </body>
 </html>

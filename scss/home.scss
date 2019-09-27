@@ -4,6 +4,9 @@ $slider3: "../files/3rd.png";
 @import "global.scss";
 @import "header.scss";
 @import "navigation.scss";
+.top{
+    @include spacing-reset;
+}
 @import "slider-1.scss";
 @import "sales.scss";
 @import "banner-1.scss";

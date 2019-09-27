@@ -7,11 +7,11 @@ header{
     font-size: 10px;
 	z-index: 100;
 	background: $primary;
-	border-bottom: solid 1px $border-color;
+	border-bottom: solid 2px $border-color;
     .heading, a, h1, p, figure{
         @include spacing-reset;
     }
-	.icon{
+	.big-icon{
         @include centered-flex;
         height: 100%;
         min-height: 60px;
@@ -48,7 +48,7 @@ header{
 }
 @media screen and (min-width: 1280px){
     header{
-        .icon{
+        .big-icon{
             margin-right: auto;
             margin-left: 55px;
         }

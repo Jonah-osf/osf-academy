@@ -39,15 +39,16 @@
 }
 .products-box{
     @include centered-flex;
+    justify-content: space-between;
     height: 376px;
-    @include spacing-reset;
-    display: flex;
+    width: 1170px;
+    margin: 0 auto 30px auto;
     text-align: center;
     color: $secondary;
     figure{
         @include spacing-reset;
         height: 376px;
-        width: 290px;
+        width: 270px;
         display: block;
         overflow: hidden;
         border-radius: 5px;
@@ -141,6 +142,9 @@
 @media screen and (min-width: 768px){
     .products{
         padding: 1px 30px 70px 30px !important;
+        h1{
+            font-size: 24px;
+        }
     }
 }
 @media screen and (min-width: 1170px){

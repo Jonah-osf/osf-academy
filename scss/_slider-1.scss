@@ -1,7 +1,8 @@
 $dots-s: all 0.35s ease-out;
 $slider-s: left 1s ease-in-out;
-$h-timing: opacity 1s 1s ease-in-out;
-$p-timing: opacity 0.8s 1.2s ease-in-out;
+$slider-s-out: left 0.8s 0.5s;
+$h-timing: opacity 1s 1s ease-in;
+$p-timing: opacity 0.8s 1.5s ease-in;
 @mixin transition-dots{
 	transition: $dots-s;
 	-moz-transition: $dots-s;
@@ -18,6 +19,15 @@ $p-timing: opacity 0.8s 1.2s ease-in-out;
 	z-index: 2;
 	left: 0;
 }
+@mixin left-unchecked{
+    transition: $slider-s-out;
+	-moz-transition: $slider-s-out;
+    -webkit-transition: $slider-s-out;
+    -o-transition: $slider-s-out;
+    -ms-transition: $slider-s-out;
+    z-index: 0;
+    left: 160%;
+}
 @mixin h-checked{
 	transition: $h-timing;
 	-moz-transition: $h-timing;
@@ -25,7 +35,6 @@ $p-timing: opacity 0.8s 1.2s ease-in-out;
     -o-transition: $h-timing;
     -ms-transition: $h-timing;
 	z-index: 2;
-	opacity: 1;
 }
 @mixin p-checked{
 	transition: $p-timing;
@@ -34,11 +43,10 @@ $p-timing: opacity 0.8s 1.2s ease-in-out;
     -o-transition: $p-timing;
     -ms-transition: $p-timing;
 	z-index: 2;
-	opacity: 1;
 }
 
 .slider{
-	display: inline-block;
+	display: block;
 	margin: 79px auto 17px auto;
     height: 510px;
 	width: 90%;
@@ -63,31 +71,26 @@ $p-timing: opacity 0.8s 1.2s ease-in-out;
     .content-p + button{
         opacity: 1;
     }
-    .content-h{
-        @include h-checked;
-    }
-    .content-p{
-        @include p-checked;
-    }
-    .content-p + button{
-        @include p-checked;
-    }
 }
 //Slide & Content
 
 .slide{
 	@include full-dimensions;
-	position: absolute;
-	z-index: 0;
-	top: 0;
-	left: 160%;
 	@include spacing-reset;
-	transition: left 0.8s 0.5s;
+	@include left-unchecked;
+    position: absolute;
+	top: 0;
 	border-radius: 5px;
 	color: $primary;
 }
-.content-p, .content-h,
+.content-p,
 .content-p + button{
+    @include p-checked;
+    opacity: 0;
+    margin-left: 15px;
+}
+.content-h{
+    @include h-checked;
     opacity: 0;
     margin-left: 15px;
 }
@@ -159,6 +162,8 @@ $p-timing: opacity 0.8s 1.2s ease-in-out;
         max-width: 870px;
     }
     .slider{
+        display: inline-block;
+        margin-top: 96px;
         margin-left: 30px;
     }
 	.content-p{

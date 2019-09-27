@@ -1,19 +1,65 @@
 /// Desktop Navigation ///
-.d-nav, ul, li{
-    height: 100%;
-    @include centered-flex;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
-    ul > li{
-        width: 94px;
-        margin-right: 17px;
-        a{
-            margin-right: auto;
+.d-nav{
+    display: none;
+    .drop-second{
+        display: none;
+    }
+}
+.d-nav{
+    ul, li{
+        display: inline-block;
+        height: 100%;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .d-menu{
+        li{
+            margin-right: 26px;
+            a{
+                margin-right: auto;
+            }
+        }
+        li:nth-child(1){
+            margin-right: 0;
+        }
+        li:nth-last-child(1){
+            margin-right: 0;
+        }
+        .drop{
+            width: 124px;
+            @include centered-flex;
+            img{
+                margin-left: 24px;
+                margin-right: 8px;
+            }
         }
     }
-    ul > li:nth-last-child(1){
-        margin-right: 0;
+    .top-icons{
+        @include centered-flex;
+        margin-right: 55px;
+        display: inline-flex;
+        @include icons;
+        figure{
+            img:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+}
+.d-ux{
+    width: 234px;
+    text-align: center;
+    a{
+        width: 35px;
+    }
+    li:nth-child(1){
+        margin-right:37px;
+    }
+}
+@media screen and (min-width: 1280px){
+    .d-nav{
+        @include centered-flex;
     }
 }
 
@@ -167,7 +213,7 @@ $anchor-close-s: 200ms ease-in-out;
 		bottom: 0.66em;
 	}
 }
-#nav-input:checked ~ nav{
+#nav-input:checked ~ .m-nav{
     @include burger-open;
     transform: scale(1,1);
     background: $secondary;
@@ -192,7 +238,7 @@ $anchor-close-s: 200ms ease-in-out;
         background: $primary;
     }
 }
-@media screen and (min-width: 1028px){
+@media screen and (min-width: 1280px){
     .nav-toggle{
         display: none;
     }

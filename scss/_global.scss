@@ -3,6 +3,7 @@
 /*Global SCSS*/
 //////////////////////////////////////////
 $main-font: 'Lato', sans-serif;
+$lato: 'Lato';
 $second-font: 'Quicksand', sans-serif;
 $third-font: 'Sniglet', cursive;
 //Global Colors
@@ -20,6 +21,7 @@ $prod-b: rgba(54, 59, 65,1);
 $br-color: rgba(239, 239, 239,1);
 $border-color: rgba(244, 241, 235, 1);
 $money-green: rgba(94, 196, 110,1);
+
 
 @mixin full-dimensions{
 	height: 100%; width: 100%;
@@ -53,6 +55,19 @@ $money-green: rgba(94, 196, 110,1);
         background: rgba(255,255,255, 0.3);
     }
 }
+@mixin icons{
+    figure{
+        height: 100%;
+        padding: 0;
+        margin: 0 auto;
+        @include centered-flex;
+    }
+    img{
+        height: auto;
+        width: auto;
+        margin: 0 15px;
+    }    
+}
 /////////////////////////////////////////////
 /*Global Styles*/
 ////////////////////////////////////////////
@@ -73,6 +88,7 @@ html, body{
   -ms-transition: none !important;
   -o-transition: none !important;
 }
+///Small Styles///
 li{
     list-style-type: none;
 }
@@ -82,7 +98,11 @@ ul{
 a, button{
     cursor: pointer;
 }
-//Dropdown menu
+.openapp:hover{
+    text-decoration: underline;
+    color: $quinary;
+}
+//Mobile Dropdown menu///
 .drop{
     display: flex;
     width: 100%;
