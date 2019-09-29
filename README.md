@@ -7,6 +7,6 @@
 
 <b>What isn't working:</b><br>
 1) Desktop header drop down function is not working, not complete
-2) Featured products: not complete<br>
-3)Cannot load more than two rows for popular items. Did not include json functionality for that<br>
-4)Some minor styling bugs in Safari, but besides that, Safari, Edge, Chrome & Firefox work<br>
+2) Featured products: not complete
+3) Cannot load more than two rows for popular items. Did not include json functionality for that
+4) Some minor styling bugs in Safari, but besides that, Safari, Edge, Chrome & Firefox work
