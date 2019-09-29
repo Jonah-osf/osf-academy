@@ -1,8 +1,24 @@
+$m-card-s: all 0.6s ease-in-out;
+$d-card-s: none !important;
 @mixin tile-details{
 	height: 40px;
     width: 100%;
     @include spacing-reset;
     cursor: pointer;
+}
+@mixin m-card-transition{
+    transition: $m-card-s;
+	-moz-transition: $m-card-s;
+    -webkit-transition: $m-card-s;
+    -o-transition: $m-card-s;
+    -ms-transition: $m-card-s;
+}
+@mixin d-card-transition{
+    transition: $d-card-s;
+	-moz-transition: $d-card-s;
+    -webkit-transition: $d-card-s;
+    -o-transition: $d-card-s;
+    -ms-transition: $d-card-s;
 }
 //Structure
 .products{
@@ -10,17 +26,22 @@
     background: $secondary;
     @include anchor-reset;
     box-sizing: border-box;
-    padding: 1px 15px 72px 15px;
+    padding: 1px 15px 70px 15px;
     text-align: center;
     input{
 		display: none;
 	}
+    button{
+        border: none;
+        background-color: transparent;
+    }
     a{
         @include spacing-reset;
     }
     h1{
-        margin: 35.5px auto;
-        max-width: 1170px;
+        height: 70px;
+        margin: 0 auto;
+        max-width: 100%;
         @include centered-flex;
         font-size: 18px;
         font-weight: 800;
@@ -37,19 +58,24 @@
         margin: 0 0 0 20px;
     }
 }
-.products-box{
+.products-row{
     @include centered-flex;
     justify-content: space-between;
+    position: relative;
     height: 376px;
-    width: 1170px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto;
     text-align: center;
     color: $secondary;
     figure{
+        position: absolute;
+        margin: 0 auto;
+        left: 160%;
+        transform: rotate(50deg);
+        @include m-card-transition;
         @include spacing-reset;
         height: 376px;
-        width: 270px;
-        display: block;
+        width: 290px;
+        opacity: 0;
         overflow: hidden;
         border-radius: 5px;
         img{
@@ -64,11 +90,16 @@
         
     }
 }
-///Nav///
+.products-row.hidden{
+    height: 1px;
+    top: 0;
+    left: 160%;
+}
+///Dots///
 .product-nav{
     position: absolute;
     height: 72px;
-    bottom: 0; left: 50%;
+    bottom: -19%; left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 	@include centered-flex;
@@ -77,12 +108,73 @@
 #event4:checked ~ .product-nav #dot4, 
 #event5:checked ~ .product-nav #dot5, 
 #event6:checked ~ .product-nav #dot6,
-#event7:checked ~ .product-nav #dot7,
-#event8:checked ~ .product-nav #dot8{
+#event7:checked ~ .product-nav #dot7,{
 	border: solid 3px $primary;
 	background: transparent;
 }
+#load-more{
+    display: none;
+    position: relative;
+    width: 255px;
+    margin-top: 45px;
+    border: 3px solid;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 32px;
+    color: $primary;
+    section{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    span{
+        float: right;
+        margin-right: 33px;
+    }
+}
+input:checked + figure{
+    left: 50%;
+    transform: rotate(0deg);
+    transform: translateX(-50%);
+    opacity: 1;
+}
 
+@media screen and (min-width: 768px){
+    .products{
+        padding: 1px 30px 70px 30px !important;
+        h1{
+            font-size: 24px;
+        }
+    }
+}
+@media screen and (min-width: 1280px){
+    .products{
+        padding: 1px 55px 70px 55px !important;
+    }
+    .products-row{
+        figure{
+            display: block;
+            position: static;
+            transform: rotate(0deg);
+            transform: translateX(0) !important;
+            opacity: 1;
+            @include d-card-transition;
+        }
+        figure:nth-of-type(2){
+            margin: 0 15px 0 30px;
+        }
+        figure:nth-of-type(3){
+            margin: 0 30px 0 15px;
+        }
+    }
+    #load-more{
+        display: inline-block;
+    }
+    .product-nav{
+        display: none;
+    }
+}
 //Tile Styles//
 .tile-overlay{
     height: 376px;
@@ -114,8 +206,8 @@
 .tile-button{
     @include tile-details;
     font-size: 0;
-    text-transform: uppercase;
     line-height: 35px;
+    text-transform: uppercase;
     span:nth-child(1){
         @include spacing-reset;
         width: 102.5px;
@@ -137,18 +229,5 @@
         border-top-right-radius: 25px;
         border-bottom-right-radius: 25px;
         font-size: 14px;
-    }
-}
-@media screen and (min-width: 768px){
-    .products{
-        padding: 1px 30px 70px 30px !important;
-        h1{
-            font-size: 24px;
-        }
-    }
-}
-@media screen and (min-width: 1170px){
-    .products{
-        padding: 1px 55px 70px 55px !important;
     }
 }

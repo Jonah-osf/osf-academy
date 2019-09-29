@@ -68,8 +68,12 @@ a, button {
   display: block;
 }
 
+.drop-first ~ .drop-second {
+  display: none;
+}
+
 .drop.open ~ .drop-first.open + .drop-second {
-  display: block;
+  display: block !important;
   margin-left: 30px;
 }
 .drop.open ~ .drop-first.open + .drop-second li {
@@ -159,10 +163,6 @@ header .heading {
 .d-nav {
   display: none;
 }
-.d-nav .drop-second {
-  display: none;
-}
-
 .d-nav ul, .d-nav li {
   display: inline-block;
   height: 100%;

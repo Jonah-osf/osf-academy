@@ -128,9 +128,12 @@ a, button{
 .drop.open ~ .drop-first{
     display: block;
 }
+.drop-first ~ .drop-second{
+    display: none;
+}
 .drop.open ~ {
     .drop-first.open + .drop-second{
-        display: block;
+        display: block !important;
         margin-left: 30px;
         li{
             margin: 7.5px 0;

@@ -68,8 +68,12 @@ a, button {
   display: block;
 }
 
+.drop-first ~ .drop-second {
+  display: none;
+}
+
 .drop.open ~ .drop-first.open + .drop-second {
-  display: block;
+  display: block !important;
   margin-left: 30px;
 }
 .drop.open ~ .drop-first.open + .drop-second li {
@@ -155,10 +159,6 @@ header .heading {
 .d-nav {
   display: none;
 }
-.d-nav .drop-second {
-  display: none;
-}
-
 .d-nav ul, .d-nav li {
   display: inline-block;
   height: 100%;
@@ -767,7 +767,7 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
   position: relative;
   background: #262a33;
   box-sizing: border-box;
-  padding: 1px 15px 72px 15px;
+  padding: 1px 15px 70px 15px;
   text-align: center;
 }
 .products a:link, .products a:visited, .products a:hover, .products a:active {
@@ -777,13 +777,18 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
 .products input {
   display: none;
 }
+.products button {
+  border: none;
+  background-color: transparent;
+}
 .products a {
   margin: 0;
   padding: 0;
 }
 .products h1 {
-  margin: 35.5px auto;
-  max-width: 1170px;
+  height: 70px;
+  margin: 0 auto;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -802,27 +807,36 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
   margin: 0 0 0 20px;
 }
 
-.products-box {
+.products-row {
   display: flex;
   align-items: center;
   justify-content: center;
   justify-content: space-between;
+  position: relative;
   height: 376px;
-  width: 1170px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto;
   text-align: center;
   color: #262a33;
 }
-.products-box figure {
+.products-row figure {
+  position: absolute;
+  margin: 0 auto;
+  left: 160%;
+  transform: rotate(50deg);
+  transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  -ms-transition: all 0.6s ease-in-out;
   margin: 0;
   padding: 0;
   height: 376px;
-  width: 270px;
-  display: block;
+  width: 290px;
+  opacity: 0;
   overflow: hidden;
   border-radius: 5px;
 }
-.products-box figure img {
+.products-row figure img {
   margin: 0;
   padding: 0;
   display: block;
@@ -830,10 +844,16 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
   height: 270px;
   width: 100%;
 }
+.products-row.hidden {
+  height: 1px;
+  top: 0;
+  left: 160%;
+}
+
 .product-nav {
   position: absolute;
   height: 72px;
-  bottom: 0;
+  bottom: -19%;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -845,12 +865,80 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
 #event4:checked ~ .product-nav #dot4,
 #event5:checked ~ .product-nav #dot5,
 #event6:checked ~ .product-nav #dot6,
-#event7:checked ~ .product-nav #dot7,
-#event8:checked ~ .product-nav #dot8 {
+#event7:checked ~ .product-nav #dot7 {
   border: solid 3px white;
   background: transparent;
 }
 
+#load-more {
+  display: none;
+  position: relative;
+  width: 255px;
+  margin-top: 45px;
+  border: 3px solid;
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 32px;
+  color: white;
+}
+#load-more section {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#load-more span {
+  float: right;
+  margin-right: 33px;
+}
+
+input:checked + figure {
+  left: 50%;
+  transform: rotate(0deg);
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .products {
+    padding: 1px 30px 70px 30px !important;
+  }
+  .products h1 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .products {
+    padding: 1px 55px 70px 55px !important;
+  }
+
+  .products-row figure {
+    display: block;
+    position: static;
+    transform: rotate(0deg);
+    transform: translateX(0) !important;
+    opacity: 1;
+    transition: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -o-transition: none !important;
+    -ms-transition: none !important;
+  }
+  .products-row figure:nth-of-type(2) {
+    margin: 0 15px 0 30px;
+  }
+  .products-row figure:nth-of-type(3) {
+    margin: 0 30px 0 15px;
+  }
+
+  #load-more {
+    display: inline-block;
+  }
+
+  .product-nav {
+    display: none;
+  }
+}
 .tile-overlay {
   height: 376px;
   width: 100%;
@@ -895,8 +983,8 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
   padding: 0;
   cursor: pointer;
   font-size: 0;
-  text-transform: uppercase;
   line-height: 35px;
+  text-transform: uppercase;
 }
 .tile-button span:nth-child(1) {
   margin: 0;
@@ -923,19 +1011,6 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
   font-size: 14px;
 }
 
-@media screen and (min-width: 768px) {
-  .products {
-    padding: 1px 30px 70px 30px !important;
-  }
-  .products h1 {
-    font-size: 24px;
-  }
-}
-@media screen and (min-width: 1170px) {
-  .products {
-    padding: 1px 55px 70px 55px !important;
-  }
-}
 /*Global SCSS*/
 /*Global Styles*/
 html, body {
@@ -1006,8 +1081,12 @@ a, button {
   display: block;
 }
 
+.drop-first ~ .drop-second {
+  display: none;
+}
+
 .drop.open ~ .drop-first.open + .drop-second {
-  display: block;
+  display: block !important;
   margin-left: 30px;
 }
 .drop.open ~ .drop-first.open + .drop-second li {
@@ -1029,7 +1108,7 @@ a, button {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  height: 575px;
   width: 100vw;
   padding: 30px 15px 0 15px;
   box-sizing: border-box;
