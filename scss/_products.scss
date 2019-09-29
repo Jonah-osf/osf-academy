@@ -1,17 +1,18 @@
-$m-card-s: all 0.6s ease-in-out;
+$all-s: all 0.6s ease-in-out;
 $d-card-s: none !important;
+$d-row-s: opacity 0.6s ease-in;
 @mixin tile-details{
 	height: 40px;
     width: 100%;
     @include spacing-reset;
     cursor: pointer;
 }
-@mixin m-card-transition{
-    transition: $m-card-s;
-	-moz-transition: $m-card-s;
-    -webkit-transition: $m-card-s;
-    -o-transition: $m-card-s;
-    -ms-transition: $m-card-s;
+@mixin all-transition{
+    transition: $all-s;
+	-moz-transition: $all-s;
+    -webkit-transition: $all-s;
+    -o-transition: $all-s;
+    -ms-transition: $all-s;
 }
 @mixin d-card-transition{
     transition: $d-card-s;
@@ -19,6 +20,13 @@ $d-card-s: none !important;
     -webkit-transition: $d-card-s;
     -o-transition: $d-card-s;
     -ms-transition: $d-card-s;
+}
+@mixin d-row-transition{
+    transition: $d-row-s;
+	-moz-transition: $d-row-s;
+    -webkit-transition: $d-row-s;
+    -o-transition: $d-row-s;
+    -ms-transition: $d-row-s;
 }
 //Structure
 .products{
@@ -42,6 +50,7 @@ $d-card-s: none !important;
         height: 70px;
         margin: 0 auto;
         max-width: 100%;
+        @include all-transition;
         @include centered-flex;
         font-size: 18px;
         font-weight: 800;
@@ -64,6 +73,7 @@ $d-card-s: none !important;
     position: relative;
     height: 376px;
     margin: 0 auto;
+    @include d-row-transition;
     text-align: center;
     color: $secondary;
     figure{
@@ -71,7 +81,7 @@ $d-card-s: none !important;
         margin: 0 auto;
         left: 160%;
         transform: rotate(50deg);
-        @include m-card-transition;
+        @include all-transition;
         @include spacing-reset;
         height: 376px;
         width: 290px;
@@ -92,6 +102,7 @@ $d-card-s: none !important;
 }
 .products-row.hidden{
     height: 1px;
+    opacity: 0;
     top: 0;
     left: 160%;
 }
@@ -144,6 +155,7 @@ input:checked + figure{
     .products{
         padding: 1px 30px 70px 30px !important;
         h1{
+            height: 100px;
             font-size: 24px;
         }
     }
@@ -151,6 +163,9 @@ input:checked + figure{
 @media screen and (min-width: 1280px){
     .products{
         padding: 1px 55px 70px 55px !important;
+        h1{
+            height: 155px;
+        }
     }
     .products-row{
         figure{
@@ -167,6 +182,9 @@ input:checked + figure{
         figure:nth-of-type(3){
             margin: 0 30px 0 15px;
         }
+    }
+    .products-row:not(:first-of-type){
+        margin-top: 30px;
     }
     #load-more{
         display: inline-block;

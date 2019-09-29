@@ -43,7 +43,7 @@ aside{
     }
 }
 .sales ~ section{
-    display: inline-block;
+    display: inline;
     height: 175px;
     padding: 1px;
     box-sizing: border-box;
@@ -83,8 +83,6 @@ aside{
 }
 @media screen and (min-width: 1280px){
     aside{
-        position: static;
-        z-index: inherit;
         margin-left: 30px !important;
         opacity: 1 !important;
     }

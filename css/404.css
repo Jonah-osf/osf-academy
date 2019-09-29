@@ -7,6 +7,7 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   position: relative;
+  scroll-behavior: smooth;
   font-size: 16px;
   font-family: "Sniglet", cursive;
   font-family: "Quicksand", sans-serif;
@@ -97,7 +98,7 @@ body {
 header {
   height: 62px;
   width: 100%;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -113,7 +114,7 @@ header .heading, header a, header h1, header p, header figure {
   padding: 0;
 }
 header .big-icon {
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -139,7 +140,7 @@ header .heading {
   }
   header .heading {
     display: inline-flex !important;
-    display: flex;
+    display: -webkit-flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -184,7 +185,7 @@ header .heading {
 }
 .d-nav .d-menu .drop {
   width: 124px;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
 }
@@ -193,7 +194,7 @@ header .heading {
   margin-right: 8px;
 }
 .d-nav .top-icons {
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   margin-right: 55px;
@@ -203,7 +204,7 @@ header .heading {
   height: 100%;
   padding: 0;
   margin: 0 auto;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
 }
@@ -229,7 +230,7 @@ header .heading {
 
 @media screen and (min-width: 1280px) {
   .d-nav {
-    display: flex;
+    display: -webkit-flex;
     align-items: center;
     justify-content: center;
   }
@@ -424,7 +425,7 @@ article h2 {
   text-align: center;
 }
 article .four04 {
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   margin: 25px auto 15px auto;
@@ -569,7 +570,7 @@ footer figure img {
   width: 100vw;
   background: #262a33;
   margin-top: 22px;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
 }
@@ -577,7 +578,7 @@ footer figure img {
   height: 100%;
   padding: 0;
   margin: 0 auto;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
 }

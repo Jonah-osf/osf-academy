@@ -37,7 +37,7 @@ $money-green: rgba(94, 196, 110,1);
 	padding: 0;
 }
 @mixin centered-flex{
-	display: flex;
+	display: -webkit-flex;
 	align-items: center;
 	justify-content: center;
 }
@@ -75,7 +75,8 @@ html, body{
 	@include full-dimensions;
 	@include spacing-reset;
     overflow-x: hidden;
-	position: relative;	
+	position: relative;
+    scroll-behavior: smooth;
 	font-size: 16px;
 	font-family: $third-font;
     font-family: $second-font;

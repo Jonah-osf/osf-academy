@@ -7,6 +7,7 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   position: relative;
+  scroll-behavior: smooth;
   font-size: 16px;
   font-family: "Sniglet", cursive;
   font-family: "Quicksand", sans-serif;
@@ -93,7 +94,7 @@ a, button {
 header {
   height: 62px;
   width: 100%;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -109,7 +110,7 @@ header .heading, header a, header h1, header p, header figure {
   padding: 0;
 }
 header .big-icon {
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -135,7 +136,7 @@ header .heading {
   }
   header .heading {
     display: inline-flex !important;
-    display: flex;
+    display: -webkit-flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -180,7 +181,7 @@ header .heading {
 }
 .d-nav .d-menu .drop {
   width: 124px;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
 }
@@ -189,7 +190,7 @@ header .heading {
   margin-right: 8px;
 }
 .d-nav .top-icons {
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   margin-right: 55px;
@@ -199,7 +200,7 @@ header .heading {
   height: 100%;
   padding: 0;
   margin: 0 auto;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
 }
@@ -225,7 +226,7 @@ header .heading {
 
 @media screen and (min-width: 1280px) {
   .d-nav {
-    display: flex;
+    display: -webkit-flex;
     align-items: center;
     justify-content: center;
   }
@@ -489,7 +490,7 @@ header .heading {
   height: 1rem;
   position: absolute;
   bottom: 5%;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   z-index: 99;
@@ -630,7 +631,7 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
 }
 
 .sales {
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -659,7 +660,7 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
 }
 
 .sales ~ section {
-  display: inline-block;
+  display: inline;
   height: 175px;
   padding: 1px;
   box-sizing: border-box;
@@ -677,7 +678,7 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
   font-size: 13px;
 }
 .sales ~ section button {
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   height: 35px;
@@ -691,7 +692,7 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
   color: #3b5b96;
 }
 .sales ~ section button a {
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   margin-left: 18px;
@@ -704,8 +705,6 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
 
 @media screen and (min-width: 1280px) {
   aside {
-    position: static;
-    z-index: inherit;
     margin-left: 30px !important;
     opacity: 1 !important;
   }
@@ -713,7 +712,7 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
 .banner {
   height: 185px;
   width: 100vw;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -789,7 +788,12 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
   height: 70px;
   margin: 0 auto;
   max-width: 100%;
-  display: flex;
+  transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  -ms-transition: all 0.6s ease-in-out;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
@@ -808,13 +812,18 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
 }
 
 .products-row {
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   justify-content: space-between;
   position: relative;
   height: 376px;
   margin: 0 auto;
+  transition: opacity 0.6s ease-in;
+  -moz-transition: opacity 0.6s ease-in;
+  -webkit-transition: opacity 0.6s ease-in;
+  -o-transition: opacity 0.6s ease-in;
+  -ms-transition: opacity 0.6s ease-in;
   text-align: center;
   color: #262a33;
 }
@@ -846,6 +855,7 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
 }
 .products-row.hidden {
   height: 1px;
+  opacity: 0;
   top: 0;
   left: 160%;
 }
@@ -857,7 +867,7 @@ aside a:link, aside a:visited, aside a:hover, aside a:active {
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
 }
@@ -904,12 +914,16 @@ input:checked + figure {
     padding: 1px 30px 70px 30px !important;
   }
   .products h1 {
+    height: 100px;
     font-size: 24px;
   }
 }
 @media screen and (min-width: 1280px) {
   .products {
     padding: 1px 55px 70px 55px !important;
+  }
+  .products h1 {
+    height: 155px;
   }
 
   .products-row figure {
@@ -929,6 +943,10 @@ input:checked + figure {
   }
   .products-row figure:nth-of-type(3) {
     margin: 0 30px 0 15px;
+  }
+
+  .products-row:not(:first-of-type) {
+    margin-top: 30px;
   }
 
   #load-more {
@@ -970,7 +988,7 @@ input:checked + figure {
   cursor: pointer;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   line-height: 50px;
@@ -1020,6 +1038,7 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   position: relative;
+  scroll-behavior: smooth;
   font-size: 16px;
   font-family: "Sniglet", cursive;
   font-family: "Quicksand", sans-serif;
@@ -1104,14 +1123,14 @@ a, button {
   }
 }
 .services {
-  display: flex;
+  height: 575px;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 30px 15px 0 15px;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 575px;
-  width: 100vw;
-  padding: 30px 15px 0 15px;
-  box-sizing: border-box;
   background: #46413e;
   color: white;
 }
@@ -1231,7 +1250,7 @@ footer figure img {
   width: 100vw;
   background: #262a33;
   margin-top: 22px;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
 }
@@ -1239,7 +1258,7 @@ footer figure img {
   height: 100%;
   padding: 0;
   margin: 0 auto;
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
 }
