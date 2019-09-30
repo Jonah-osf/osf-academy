@@ -50,6 +50,7 @@
     .services{
         height: 200px;
         width: 100vwh;
+        padding-top: 50px;
         flex-direction: row;
         section{
             @include spacing-reset;
